@@ -1,0 +1,144 @@
+{
+  "report": {
+    "title": "服务报告",
+    "intro": "分享这次服务的情况。报告发送后无法修改。",
+    "summary": "进展如何？",
+    "summaryHint": "给主人写几句实话。",
+    "checklist": {
+      "fed": "已喂食",
+      "walked": "已遛弯",
+      "meds_given": "已给药",
+      "water_refreshed": "已换水"
+    },
+    "meds": "已给的药物",
+    "noMeds": "没有正在使用的药物。",
+    "scores": "身心状态",
+    "scoresIntro": "请为每项打分，1 为较差，5 为极好。",
+    "photos": "照片",
+    "addPhotos": "添加照片",
+    "photoLimit": "最多 6 张照片。",
+    "removePhoto": "移除",
+    "alsoComplete": "同时将服务标记为已完成",
+    "submit": "发送报告",
+    "submitting": "发送中…",
+    "sentTitle": "报告已发送",
+    "sentBody": "主人现在可以查看了。",
+    "needScores": "请为每只宠物的每一项打分。",
+    "error": "无法发送报告，请重试。",
+    "back": "返回预约"
+  },
+  "feed": {
+    "title": "服务报告",
+    "empty": "暂无服务报告。",
+    "scores": "评分"
+  },
+  "visit": {
+    "start": "开始服务",
+    "complete": "完成服务",
+    "viewPet": "查看完整档案",
+    "raiseConcern": "提出关注",
+    "submitReport": "提交服务报告",
+    "petProfile": "宠物档案",
+    "actionError": "操作失败，请重试。"
+  },
+  "concern": {
+    "title": "提出关注",
+    "intro": "主人会立即收到通知，如添加照片也会一并发送。",
+    "pet": "哪只宠物？",
+    "category": "什么类型的关注？",
+    "severity": "紧急程度？",
+    "notes": "您发现了什么？",
+    "notesHint": "请具体：什么、哪里、从何时开始。",
+    "photos": "照片",
+    "submit": "通知主人",
+    "submitting": "发送中…",
+    "sentTitle": "已通知主人",
+    "sentBody": "您可以继续照顾宠物，后续由主人决定。",
+    "categories": {
+      "health": "健康",
+      "behaviour": "行为",
+      "other": "其他"
+    },
+    "severities": {
+      "info": "仅供知悉",
+      "concern": "需要关注",
+      "urgent": "紧急"
+    },
+    "required": "请描述您发现的情况。"
+  },
+  "flag": {
+    "title": "关于 {{pet}} 的关注",
+    "raised": "照护者于 {{date}} 提出",
+    "severity": "优先级",
+    "notes": "照护者发现的情况",
+    "photos": "照片",
+    "next": "您想怎么做？",
+    "callVet": "致电兽医",
+    "noVet": "请在 {{pet}} 的档案中添加兽医电话，即可在此拨打。",
+    "bookTaxi": "预约宠物接送去看兽医",
+    "acknowledge": "已知悉",
+    "resolve": "标记为已解决",
+    "done": "已采取的措施",
+    "none": "暂无。",
+    "notFound": "找不到该关注事项。",
+    "homeTitle": "需要您留意",
+    "homeItem": "关于 {{pet}} 的关注",
+    "actionError": "无法保存，请重试。"
+  },
+  "review": {
+    "title": "评价这次服务",
+    "rating": "您的评分",
+    "comment": "向其他人分享您的体验",
+    "optional": "选填",
+    "submit": "提交评价",
+    "thanks": "感谢您的评价。",
+    "yours": "您的评价",
+    "leave": "留下评价",
+    "pickRating": "请选择评分。",
+    "error": "无法保存您的评价，请重试。"
+  },
+  "dispute": {
+    "open": "报告问题",
+    "title": "报告此次服务的问题",
+    "reason": "出了什么问题？",
+    "submit": "提交给我们的团队",
+    "sent": "在我们团队调查期间，已暂停向照护者付款。",
+    "required": "请告诉我们发生了什么。"
+  },
+  "carerReviews": {
+    "title": "您的评价",
+    "empty": "暂无评价。完成服务后会显示在这里。",
+    "average": "平均评分",
+    "open": "查看您的评价"
+  },
+  "waitlist": {
+    "link": "所在城市尚未开通？加入候补名单",
+    "title": "加入候补名单",
+    "intro": "我们一次开通一座城市，凭邀请加入。告诉我们您在哪里，开通时我们会联系您。",
+    "email": "电子邮箱",
+    "city": "城市",
+    "other": "我的城市不在列表中",
+    "cityName": "您的城市",
+    "iAm": "我是",
+    "owner": "宠物主人",
+    "carer": "宠物照护专业人士",
+    "consent": "我同意 {{appName}} 就我所在城市开通事宜与我联系。我可以随时退订。",
+    "submit": "加入候补名单",
+    "doneTitle": "您已在名单中",
+    "doneBody": "{{appName}} 在{{city}}开通时，我们会给您发邮件。",
+    "errors": {
+      "email": "请输入有效的邮箱地址。",
+      "city": "请告诉我们您的城市。",
+      "consent": "请先同意后再继续。",
+      "generic": "无法添加您，请重试。"
+    },
+    "join": "加入候补名单"
+  },
+  "push": {
+    "title": "通知",
+    "body": "接收预约申请、服务报告以及宠物相关关注事项的提醒。",
+    "enable": "开启通知",
+    "on": "通知已开启",
+    "blocked": "通知已在手机设置中关闭。"
+  }
+}

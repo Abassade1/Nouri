@@ -1,0 +1,25 @@
+{
+  "home": {
+    "greeting": "Ravi de vous revoir, {{name}}",
+    "greetingNoName": "Bienvenue",
+    "subtitle": "Des soins de confiance, organisés avec discrétion.",
+    "citiesTitle": "Où nous prenons soin",
+    "launchAreas": "Lancement dans",
+    "waitlistHint": "Pas encore ouvert dans votre ville. Inscrivez-vous à la liste d'attente et nous vous préviendrons en premier."
+  },
+  "discover": {
+    "title": "Découvrir",
+    "emptyTitle": "Des intervenants sélectionnés, sur invitation",
+    "emptyBody": "Parcourez des professionnels qualifiés dans votre ville. Disponible dans une prochaine version."
+  },
+  "bookings": {
+    "title": "Réservations",
+    "emptyTitle": "Aucune réservation pour le moment",
+    "emptyBody": "Vos soins à venir et passés apparaîtront ici."
+  },
+  "pets": {
+    "title": "Vos animaux",
+    "emptyTitle": "Chaque animal, un profil",
+    "emptyBody": "La santé, la routine et le bien-être de chacun de vos animaux seront réunis ici."
+  }
+}

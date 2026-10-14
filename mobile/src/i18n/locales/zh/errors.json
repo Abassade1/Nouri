@@ -1,0 +1,12 @@
+{
+  "generic": "出了点问题，请重试。",
+  "network": "无法连接服务器，请检查网络。",
+  "invalidCredentials": "邮箱和密码不匹配。",
+  "emailTaken": "该邮箱已注册账户。",
+  "weakPassword": "请设置至少 8 个字符的密码。",
+  "invalidEmail": "请输入有效的邮箱地址。",
+  "required": "此项为必填。",
+  "consentRequired": "请先同意后再继续。",
+  "notConfigured": "应用尚未连接后端。请在 .env 中添加 Supabase 密钥（见 README）。",
+  "socialCancelled": "登录已取消。"
+}

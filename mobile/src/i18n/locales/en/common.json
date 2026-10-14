@@ -1,0 +1,20 @@
+{
+  "tagline": "Considered care for the animals you love.",
+  "continue": "Continue",
+  "cancel": "Cancel",
+  "retry": "Try again",
+  "back": "Back",
+  "loading": "Loading…",
+  "or": "or",
+  "live": "Live",
+  "comingSoon": "Coming soon",
+  "notYetLive": "Coming soon",
+  "optional": "Optional",
+  "preview": {
+    "banner": "Design preview · sample data",
+    "asOwner": "Preview as a pet owner",
+    "asCarer": "Preview as a carer",
+    "asAdmin": "Preview as an admin",
+    "exit": "Exit preview"
+  }
+}

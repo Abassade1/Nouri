@@ -1,0 +1,73 @@
+{
+  "list": {
+    "title": "预约",
+    "upcoming": "即将到来",
+    "past": "历史",
+    "requests": "待处理申请",
+    "emptyTitle": "暂无预约",
+    "emptyBody": "您即将到来和过往的照护将显示在这里。",
+    "carerEmptyBody": "获批后，预约申请和日程将显示在这里。",
+    "noRequests": "暂无新申请。",
+    "agenda": "即将到来"
+  },
+  "status": {
+    "requested": "等待照护者回复",
+    "accepted": "已接受",
+    "declined": "已拒绝",
+    "payment_failed": "需要付款",
+    "confirmed": "已确认",
+    "in_progress": "进行中",
+    "completed": "已完成",
+    "cancelled": "已取消",
+    "disputed": "审核中"
+  },
+  "detail": {
+    "title": "预约",
+    "notFound": "找不到该预约。",
+    "when": "时间",
+    "service": "服务",
+    "carer": "照护者",
+    "owner": "宠物主人",
+    "pets": "宠物",
+    "notes": "备注",
+    "ownerNotes": "主人的备注",
+    "price": "价格",
+    "subtotal": "小计",
+    "total": "总计",
+    "commission": "平台费用",
+    "payout": "您的收入",
+    "nights": "晚数：{{count}}",
+    "cancel": "取消申请",
+    "cancelBooking": "取消预约",
+    "accept": "接受",
+    "decline": "拒绝",
+    "acceptedNote": "照护者已接受。付款和确认将在下一版本开放。",
+    "requestedNote": "正在等待照护者回复。您尚未被收费。",
+    "declinedNote": "照护者无法接受此次预约。您未被收费。",
+    "cancelledNote": "该预约已取消。",
+    "carerAcceptedNote": "您已接受。主人将被请求确认并付款。",
+    "actionError": "操作失败。时间可能已被占用或状态已变化，请刷新。",
+    "behaviour": "行为"
+  },
+  "availability": {
+    "title": "每周可预约时间",
+    "intro": "宠物主人只能在这些时段内申请预约。时间为您所在城市的当地时间。",
+    "closed": "休息",
+    "add": "添加时段",
+    "from": "开始",
+    "to": "结束",
+    "hint": "24 小时制，如 09:00",
+    "save": "添加",
+    "cancel": "取消",
+    "remove": "移除",
+    "cardTitle": "每周可预约时间",
+    "cardBody": "设置宠物主人可以预约您的时段。",
+    "cardAction": "编辑时段",
+    "errors": {
+      "invalidTime": "请使用 24 小时制，如 09:00。",
+      "order": "结束时间必须晚于开始时间。",
+      "overlap": "这些时段与当天的另一时段重叠。",
+      "generic": "无法保存，请重试。"
+    }
+  }
+}

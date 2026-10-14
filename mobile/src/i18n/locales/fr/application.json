@@ -1,0 +1,152 @@
+{
+  "hub": {
+    "title": "Votre candidature",
+    "subtitle": "Complétez chaque étape, puis soumettez pour examen. Notre équipe lit chaque candidature personnellement.",
+    "complete": "Terminé",
+    "incomplete": "À faire",
+    "submit": "Soumettre pour examen",
+    "submitting": "Envoi…",
+    "submitted": "Soumise",
+    "lockedPending": "Votre candidature est en cours d'examen et ne peut pas être modifiée pour le moment. Nous vous informerons dès qu'il y aura du nouveau.",
+    "rejectedTitle": "Modifications requises",
+    "rejectedNotes": "Commentaires de notre équipe",
+    "rejectedHelp": "Mettez à jour votre candidature, puis soumettez-la de nouveau.",
+    "readyHint": "Tout est complet. Vous pouvez soumettre.",
+    "notReadyHint": "Terminez les étapes ci-dessus pour soumettre.",
+    "sections": {
+      "profile": "À propos de vous",
+      "profileBody": "Ville, présentation, expérience et zone de service",
+      "services": "Services et tarifs",
+      "servicesBody": "Ce que vous offrez et ce que vous facturez",
+      "credentials": "Qualifications",
+      "credentialsBody": "Certificats et documents que nous vérifions",
+      "references": "Références",
+      "referencesBody": "Deux personnes qui peuvent témoigner de vos soins",
+      "consent": "Consentement",
+      "consentBody": "Vérification des antécédents et conditions"
+    }
+  },
+  "profile": {
+    "title": "À propos de vous",
+    "city": "Ville",
+    "cityHint": "Villes actuellement ouvertes aux candidatures.",
+    "noCities": "Aucune ville n'est ouverte pour le moment.",
+    "displayName": "Nom affiché aux propriétaires",
+    "headline": "Titre",
+    "headlineHint": "Une ligne, p. ex. « Technicienne vétérinaire agréée spécialisée en chiens âgés »",
+    "bio": "Présentation",
+    "bioHint": "Votre expérience, votre approche et ce que les propriétaires peuvent attendre.",
+    "years": "Années d'expérience",
+    "languages": "Langues parlées",
+    "specialties": "Spécialités",
+    "radius": "Rayon de service (km)",
+    "postalCode": "Code postal du domicile",
+    "postalHint": "Sert à vous associer aux propriétaires proches. Les propriétaires ne voient que la première partie.",
+    "save": "Enregistrer",
+    "saving": "Enregistrement…"
+  },
+  "specialties": {
+    "senior_care": "Animaux âgés",
+    "medication": "Médication et soins médicaux",
+    "anxious_pets": "Animaux anxieux ou réactifs",
+    "puppies": "Chiots",
+    "large_breeds": "Grandes races",
+    "special_needs": "Besoins particuliers"
+  },
+  "languages": {
+    "en": "Anglais",
+    "fr": "Français",
+    "ar": "Arabe",
+    "zh": "Chinois",
+    "es": "Espagnol",
+    "pa": "Pendjabi"
+  },
+  "services": {
+    "title": "Services et tarifs",
+    "intro": "Choisissez les services que vous offrez et fixez votre tarif. Les tarifs s'entendent avant taxes.",
+    "offer": "J'offre ce service",
+    "rate": "Votre tarif",
+    "unit": {
+      "per_visit": "par visite",
+      "per_walk": "par promenade",
+      "per_night": "par nuit",
+      "per_trip": "par trajet"
+    },
+    "commissionNote": "Notre commission est de {{percent}} de votre tarif. Vous gardez le reste.",
+    "noCity": "Choisissez d'abord votre ville dans « À propos de vous » pour voir les services offerts.",
+    "invalidRate": "Entrez un tarif entre 1 et 10 000.",
+    "save": "Enregistrer les tarifs"
+  },
+  "credentials": {
+    "title": "Qualifications",
+    "intro": "Téléversez les certificats et documents qui attestent votre formation. Notre équipe vérifie chacun et attribue vos insignes.",
+    "privacy": "Les documents sont stockés de façon privée et vus uniquement par notre équipe d'examen.",
+    "add": "Ajouter une qualification",
+    "type": "Type",
+    "name": "Titre",
+    "namePlaceholder": "p. ex. Technicienne en santé animale agréée",
+    "issuer": "Délivré par",
+    "issuedOn": "Date de délivrance",
+    "expiresOn": "Date d'expiration",
+    "dateHint": "Format : AAAA-MM-JJ",
+    "chooseFile": "Choisir un fichier (PDF ou photo)",
+    "fileChosen": "Fichier sélectionné",
+    "save": "Téléverser",
+    "uploading": "Téléversement…",
+    "remove": "Retirer",
+    "empty": "Aucune qualification pour le moment.",
+    "reviewNote": "Commentaire du réviseur",
+    "expires": "Expire le {{date}}",
+    "types": {
+      "vet_tech": "Certificat de technicien vétérinaire",
+      "trainer_cert": "Certification d'éducateur",
+      "groomer_cert": "Certification de toiletteur",
+      "first_aid": "Premiers soins / RCR pour animaux",
+      "background_check": "Vérification des antécédents",
+      "insurance": "Assurance responsabilité",
+      "id_document": "Pièce d'identité gouvernementale",
+      "other": "Autre"
+    },
+    "status": {
+      "pending": "En attente d'examen",
+      "verified": "Vérifiée",
+      "rejected": "Non acceptée"
+    }
+  },
+  "references": {
+    "title": "Références",
+    "intro": "Ajoutez au moins deux personnes qui peuvent témoigner de votre travail avec les animaux. Nous pourrions les contacter.",
+    "add": "Ajouter une référence",
+    "name": "Nom",
+    "relationship": "Lien",
+    "relationshipHint": "p. ex. ancien employeur, directeur de clinique",
+    "email": "Courriel",
+    "phone": "Téléphone",
+    "contactHint": "Indiquez un courriel ou un numéro de téléphone.",
+    "save": "Ajouter",
+    "remove": "Retirer",
+    "empty": "Aucune référence pour le moment.",
+    "count": "{{count}} sur 2 ajoutées"
+  },
+  "consent": {
+    "title": "Consentement",
+    "intro": "Nous ne demandons que ce qui est nécessaire pour assurer la sécurité des propriétaires et des animaux.",
+    "backgroundCheck": "Je consens à ce que {{appName}} procède à une vérification des antécédents criminels ainsi qu'à la vérification de mes références et qualifications. Je comprends que ces renseignements servent uniquement à évaluer ma candidature.",
+    "terms": "Je confirme que les renseignements fournis sont exacts et j'accepte les conditions d'utilisation et la politique de confidentialité.",
+    "save": "Enregistrer le consentement"
+  },
+  "errors": {
+    "application_incomplete_profile": "Veuillez d'abord remplir « À propos de vous » (ville, nom, présentation et code postal).",
+    "application_missing_consent": "Veuillez donner les deux consentements avant de soumettre.",
+    "application_needs_credential": "Veuillez téléverser au moins une qualification.",
+    "application_needs_two_references": "Veuillez ajouter au moins deux références.",
+    "application_needs_service": "Veuillez offrir au moins un service avec un tarif.",
+    "invalidPostal": "Entrez un code postal valide, par exemple {{example}}.",
+    "invalidDate": "Utilisez le format AAAA-MM-JJ.",
+    "required": "Ce champ est obligatoire.",
+    "noFile": "Veuillez choisir un fichier.",
+    "fileTooLarge": "Ce fichier est trop volumineux (10 Mo maximum).",
+    "contactRequired": "Indiquez un courriel ou un numéro de téléphone.",
+    "locked": "Votre candidature est verrouillée pendant son examen."
+  }
+}

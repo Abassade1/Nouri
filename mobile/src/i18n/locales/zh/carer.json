@@ -1,0 +1,37 @@
+{
+  "today": {
+    "title": "您的工作台",
+    "applicationTitle": "您的申请",
+    "startApplication": "开始申请",
+    "availableSoon": "申请功能将在下一版本开放",
+    "status": {
+      "none": "未开始",
+      "draft": "草稿",
+      "pending": "审核中",
+      "approved": "已通过",
+      "rejected": "需要修改",
+      "suspended": "已暂停"
+    },
+    "statusBody": {
+      "none": "请介绍您的经验并提交资质证明。我们的团队会亲自审核每一份申请。",
+      "draft": "请完成申请并提交审核。",
+      "pending": "我们的团队正在审核您的申请，有进展会立即通知您。",
+      "approved": "您已上线。所在城市的宠物主人现在可以找到并预约您。",
+      "rejected": "请查看我们的意见并更新您的申请。",
+      "suspended": "您的资料已暂停。请联系客服。"
+    },
+    "continueApplication": "继续申请",
+    "viewApplication": "查看申请"
+  },
+  "bookings": {
+    "title": "预约",
+    "emptyTitle": "暂无预约",
+    "emptyBody": "获批后，预约请求和日程将显示在这里。"
+  },
+  "earnings": {
+    "title": "收入",
+    "thisMonth": "本月",
+    "emptyTitle": "暂无收入",
+    "emptyBody": "已完成的服务和付款将列在这里。"
+  }
+}

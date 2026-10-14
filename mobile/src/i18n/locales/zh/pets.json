@@ -1,0 +1,178 @@
+{
+  "list": {
+    "title": "我的宠物",
+    "add": "添加宠物",
+    "emptyTitle": "每只宠物，一份档案",
+    "emptyBody": "添加您的第一只宠物，把它的健康、日常习惯和身心状态集中记录在一处。"
+  },
+  "age": {
+    "years": "{{years}} 岁",
+    "months": "{{months}} 个月"
+  },
+  "species": {
+    "dog": "狗",
+    "cat": "猫",
+    "other": "其他"
+  },
+  "sex": {
+    "male": "雄性",
+    "female": "雌性",
+    "unknown": "未说明"
+  },
+  "tags": {
+    "healthy": "健康",
+    "senior": "老年",
+    "special_needs": "特殊需求",
+    "on_medication": "正在用药"
+  },
+  "insurance": {
+    "unknown": "未说明",
+    "none": "未投保",
+    "insured": "已投保"
+  },
+  "form": {
+    "newTitle": "新宠物",
+    "editTitle": "编辑档案",
+    "identity": "基本信息",
+    "routine": "行为与日常",
+    "health": "健康",
+    "name": "名字",
+    "species": "种类",
+    "breed": "品种",
+    "sex": "性别",
+    "neutered": "已绝育",
+    "ageYears": "年龄（岁）",
+    "ageMonths": "月数",
+    "weight": "体重（公斤）",
+    "status": "状态",
+    "behaviour": "行为备注",
+    "feeding": "喂食习惯",
+    "walking": "遛弯习惯",
+    "quirks": "小习惯与注意事项",
+    "photoAdd": "添加照片",
+    "photoChange": "更换照片",
+    "save": "保存",
+    "saving": "保存中…",
+    "archive": "归档这只宠物",
+    "archiveConfirm": "归档 {{name}}？其照护记录将保留。",
+    "healthPrivacy": "仅与您已确认预约的照护者共享，并在服务结束后 7 天内有效。",
+    "medicalNotes": "医疗备注",
+    "allergies": "过敏",
+    "allergiesHint": "用逗号分隔",
+    "microchip": "芯片编号",
+    "insuranceStatus": "保险",
+    "insuranceProvider": "保险公司",
+    "vetClinic": "兽医诊所",
+    "vetName": "兽医姓名",
+    "vetPhone": "兽医电话"
+  },
+  "detail": {
+    "edit": "编辑",
+    "routine": "行为与日常",
+    "behaviour": "行为",
+    "feeding": "喂食",
+    "walking": "遛弯",
+    "quirks": "需要知道",
+    "health": "健康",
+    "medicalNotes": "医疗备注",
+    "allergies": "过敏",
+    "microchip": "芯片",
+    "insurance": "保险",
+    "vet": "兽医",
+    "callVet": "致电兽医",
+    "none": "尚未添加。",
+    "weight": "{{kg}} 公斤"
+  },
+  "meds": {
+    "title": "药物",
+    "add": "添加药物",
+    "name": "药名",
+    "dose": "剂量",
+    "frequency": "频率",
+    "times": "时间",
+    "timesHint": "24 小时制，用逗号分隔，如 08:00, 20:00",
+    "instructions": "说明",
+    "active": "使用中",
+    "paused": "已暂停",
+    "pause": "暂停",
+    "resume": "恢复",
+    "remove": "移除",
+    "save": "添加",
+    "cancel": "取消",
+    "empty": "暂无药物。",
+    "freq": {
+      "daily": "每天",
+      "twice_daily": "每天两次",
+      "weekly": "每周",
+      "as_needed": "按需"
+    }
+  },
+  "wellbeing": {
+    "title": "身心状态",
+    "intro": "照护者在每次服务后更新。1 为较差，5 为极好。",
+    "empty": "暂无评分。首次服务后会显示。",
+    "latest": "最新",
+    "metrics": {
+      "health": "健康",
+      "nutrition_hydration": "营养与饮水",
+      "activity": "活动量",
+      "happiness": "快乐程度"
+    },
+    "trendUp": "比上次更高",
+    "trendDown": "比上次更低",
+    "trendSame": "与上次相同",
+    "chartLabel": "{{metric}} 趋势"
+  },
+  "history": {
+    "title": "照护记录",
+    "intro": "永久记录。条目不可编辑或删除。",
+    "empty": "暂无记录。",
+    "addVet": "记录一次兽医就诊",
+    "addNote": "添加备注",
+    "entryTitle": "标题",
+    "entryNote": "详情",
+    "entryDate": "日期",
+    "dateHint": "YYYY-MM-DD，留空表示今天",
+    "save": "保存到记录",
+    "types": {
+      "visit_report": "服务报告",
+      "medication_given": "已给药",
+      "vet_visit": "兽医就诊",
+      "concern_flag": "提出关注",
+      "flag_action": "已采取措施",
+      "booking_completed": "服务完成",
+      "note": "备注"
+    },
+    "flagActions": {
+      "acknowledged": "已知悉",
+      "called_vet": "已致电兽医",
+      "booked_pet_taxi": "已预约宠物接送",
+      "resolved": "已标记解决",
+      "note": "已添加备注"
+    },
+    "severity": {
+      "info": "仅供知悉",
+      "concern": "需关注",
+      "urgent": "紧急"
+    },
+    "categories": {
+      "health": "健康",
+      "behaviour": "行为",
+      "other": "其他"
+    },
+    "checklist": {
+      "fed": "已喂食",
+      "walked": "已遛弯",
+      "meds_given": "已给药",
+      "water_refreshed": "已换水"
+    },
+    "photos": "照片：{{count}}"
+  },
+  "errors": {
+    "required": "此项为必填。",
+    "invalidNumber": "请输入有效数字。",
+    "invalidTime": "请使用 24 小时制，如 08:00。",
+    "invalidDate": "请使用 YYYY-MM-DD 格式。",
+    "generic": "出了点问题，请重试。"
+  }
+}

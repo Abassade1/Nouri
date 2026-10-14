@@ -1,0 +1,62 @@
+{
+  "pay": {
+    "confirm": "Confirm & pay {{amount}}",
+    "note": "You'll be charged {{amount}} now. {{name}} is paid after the visit is completed.",
+    "secure": "Payments are processed securely by Stripe.",
+    "processing": "Confirming your payment…",
+    "paid": "Payment received. Your booking is confirmed.",
+    "failed": "The payment didn't go through, and you haven't been charged. Please try again.",
+    "unsupported": "Payments are available in the mobile app.",
+    "paidOn": "Paid {{date}}",
+    "refunded": "Refunded {{amount}}",
+    "needsPayment": "Your carer accepted. Confirm and pay to secure this booking.",
+    "retry": "Try payment again"
+  },
+  "cancel": {
+    "title": "Cancel this booking?",
+    "refundFull": "You'll receive a full refund of {{amount}}.",
+    "refundPartial": "You'll receive {{percent}}% back ({{amount}}), because the visit starts in under {{hours}} hours.",
+    "refundNone": "This booking is no longer refundable.",
+    "carerBody": "The owner will be refunded in full.",
+    "keep": "Keep booking",
+    "confirm": "Cancel booking",
+    "done": "Booking cancelled. Refunded: {{amount}}.",
+    "error": "We couldn't cancel this booking. Please try again."
+  },
+  "earnings": {
+    "thisMonth": "This month",
+    "released": "Paid out to your account",
+    "pending": "Releasing soon",
+    "upcoming": "Upcoming visits",
+    "holdNote": "Each payout is released {{hours}} hours after a visit is completed.",
+    "history": "Recent visits",
+    "noHistory": "Paid visits will be listed here.",
+    "bankPayouts": "Bank payouts",
+    "noPayouts": "Stripe sends your balance to your bank on its own schedule. Payouts will appear here.",
+    "state": {
+      "released": "Paid out",
+      "pending": "Releasing {{date}}",
+      "upcoming": "After the visit"
+    },
+    "payoutStatus": {
+      "pending": "Pending",
+      "in_transit": "On the way",
+      "paid": "Paid",
+      "failed": "Failed"
+    }
+  },
+  "setup": {
+    "title": "Set up payouts",
+    "body": "Connect your bank account through Stripe so you can be paid. You won't appear to owners until this is done.",
+    "start": "Set up payouts",
+    "continue": "Finish setup",
+    "pendingBody": "Stripe still needs a few details before you can be paid.",
+    "ready": "Payouts are active",
+    "manage": "Manage payout account",
+    "checking": "Checking…",
+    "error": "We couldn't reach Stripe. Please try again.",
+    "needBefore": "Set up payouts before accepting bookings.",
+    "goSetup": "Go to payouts",
+    "todayNudge": "You're approved. Set up payouts to appear to owners."
+  }
+}

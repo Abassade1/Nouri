@@ -1,0 +1,178 @@
+{
+  "list": {
+    "title": "Vos animaux",
+    "add": "Ajouter un animal",
+    "emptyTitle": "Chaque animal, un profil",
+    "emptyBody": "Ajoutez votre premier animal pour réunir sa santé, sa routine et son bien-être au même endroit."
+  },
+  "age": {
+    "years": "{{years}} ans",
+    "months": "{{months}} mois"
+  },
+  "species": {
+    "dog": "Chien",
+    "cat": "Chat",
+    "other": "Autre"
+  },
+  "sex": {
+    "male": "Mâle",
+    "female": "Femelle",
+    "unknown": "Non précisé"
+  },
+  "tags": {
+    "healthy": "En santé",
+    "senior": "Âgé",
+    "special_needs": "Besoins particuliers",
+    "on_medication": "Sous médication"
+  },
+  "insurance": {
+    "unknown": "Non précisé",
+    "none": "Non assuré",
+    "insured": "Assuré"
+  },
+  "form": {
+    "newTitle": "Nouvel animal",
+    "editTitle": "Modifier le profil",
+    "identity": "Identité",
+    "routine": "Comportement et routine",
+    "health": "Santé",
+    "name": "Nom",
+    "species": "Espèce",
+    "breed": "Race",
+    "sex": "Sexe",
+    "neutered": "Stérilisé",
+    "ageYears": "Âge (années)",
+    "ageMonths": "Mois",
+    "weight": "Poids (kg)",
+    "status": "Statut",
+    "behaviour": "Notes sur le comportement",
+    "feeding": "Routine d'alimentation",
+    "walking": "Routine de promenade",
+    "quirks": "Habitudes et choses à savoir",
+    "photoAdd": "Ajouter une photo",
+    "photoChange": "Changer la photo",
+    "save": "Enregistrer",
+    "saving": "Enregistrement…",
+    "archive": "Archiver cet animal",
+    "archiveConfirm": "Archiver {{name}} ? Son historique de soins est conservé.",
+    "healthPrivacy": "Partagé uniquement avec les intervenants ayant une réservation confirmée avec vous, et pendant 7 jours par la suite.",
+    "medicalNotes": "Notes médicales",
+    "allergies": "Allergies",
+    "allergiesHint": "Séparez par des virgules",
+    "microchip": "Numéro de puce",
+    "insuranceStatus": "Assurance",
+    "insuranceProvider": "Assureur",
+    "vetClinic": "Clinique vétérinaire",
+    "vetName": "Nom du vétérinaire",
+    "vetPhone": "Téléphone du vétérinaire"
+  },
+  "detail": {
+    "edit": "Modifier",
+    "routine": "Comportement et routine",
+    "behaviour": "Comportement",
+    "feeding": "Alimentation",
+    "walking": "Promenades",
+    "quirks": "Bon à savoir",
+    "health": "Santé",
+    "medicalNotes": "Notes médicales",
+    "allergies": "Allergies",
+    "microchip": "Puce",
+    "insurance": "Assurance",
+    "vet": "Vétérinaire",
+    "callVet": "Appeler le vétérinaire",
+    "none": "Rien d'ajouté pour le moment.",
+    "weight": "{{kg}} kg"
+  },
+  "meds": {
+    "title": "Médicaments",
+    "add": "Ajouter un médicament",
+    "name": "Médicament",
+    "dose": "Dose",
+    "frequency": "Fréquence",
+    "times": "Heures",
+    "timesHint": "Format 24 h, séparées par des virgules, p. ex. 08:00, 20:00",
+    "instructions": "Instructions",
+    "active": "Actif",
+    "paused": "Suspendu",
+    "pause": "Suspendre",
+    "resume": "Reprendre",
+    "remove": "Retirer",
+    "save": "Ajouter",
+    "cancel": "Annuler",
+    "empty": "Aucun médicament.",
+    "freq": {
+      "daily": "Quotidien",
+      "twice_daily": "Deux fois par jour",
+      "weekly": "Hebdomadaire",
+      "as_needed": "Au besoin"
+    }
+  },
+  "wellbeing": {
+    "title": "Bien-être",
+    "intro": "Votre intervenant met ces valeurs à jour après chaque visite. 1 est faible, 5 est excellent.",
+    "empty": "Aucune note pour le moment. Elles apparaissent après la première visite.",
+    "latest": "Dernière",
+    "metrics": {
+      "health": "Santé",
+      "nutrition_hydration": "Nutrition et hydratation",
+      "activity": "Activité",
+      "happiness": "Bonheur"
+    },
+    "trendUp": "En hausse depuis la dernière fois",
+    "trendDown": "En baisse depuis la dernière fois",
+    "trendSame": "Identique à la dernière fois",
+    "chartLabel": "Tendance : {{metric}}"
+  },
+  "history": {
+    "title": "Historique de soins",
+    "intro": "Un registre permanent. Les entrées ne peuvent être ni modifiées ni supprimées.",
+    "empty": "Rien d'enregistré pour le moment.",
+    "addVet": "Consigner une visite chez le vétérinaire",
+    "addNote": "Ajouter une note",
+    "entryTitle": "Titre",
+    "entryNote": "Détails",
+    "entryDate": "Date",
+    "dateHint": "AAAA-MM-JJ, laisser vide pour aujourd'hui",
+    "save": "Enregistrer dans l'historique",
+    "types": {
+      "visit_report": "Rapport de visite",
+      "medication_given": "Médicament administré",
+      "vet_visit": "Visite chez le vétérinaire",
+      "concern_flag": "Préoccupation signalée",
+      "flag_action": "Mesure prise",
+      "booking_completed": "Visite terminée",
+      "note": "Note"
+    },
+    "flagActions": {
+      "acknowledged": "Pris en compte",
+      "called_vet": "Appel au vétérinaire",
+      "booked_pet_taxi": "Taxi pour animaux réservé",
+      "resolved": "Marqué comme réglé",
+      "note": "Note ajoutée"
+    },
+    "severity": {
+      "info": "À titre informatif",
+      "concern": "Préoccupation",
+      "urgent": "Urgent"
+    },
+    "categories": {
+      "health": "Santé",
+      "behaviour": "Comportement",
+      "other": "Autre"
+    },
+    "checklist": {
+      "fed": "Nourri",
+      "walked": "Promené",
+      "meds_given": "Médicament donné",
+      "water_refreshed": "Eau fraîche"
+    },
+    "photos": "Photos : {{count}}"
+  },
+  "errors": {
+    "required": "Ce champ est obligatoire.",
+    "invalidNumber": "Entrez un nombre valide.",
+    "invalidTime": "Utilisez le format 24 h, p. ex. 08:00.",
+    "invalidDate": "Utilisez le format AAAA-MM-JJ.",
+    "generic": "Une erreur s'est produite. Veuillez réessayer."
+  }
+}

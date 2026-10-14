@@ -1,0 +1,37 @@
+{
+  "today": {
+    "title": "Your practice",
+    "applicationTitle": "Your application",
+    "startApplication": "Start application",
+    "availableSoon": "Application opens in the next release",
+    "status": {
+      "none": "Not started",
+      "draft": "Draft",
+      "pending": "In review",
+      "approved": "Approved",
+      "rejected": "Needs changes",
+      "suspended": "Paused"
+    },
+    "statusBody": {
+      "none": "Tell us about your experience and share your credentials. Our team reviews every application personally.",
+      "draft": "Finish your application and submit it for review.",
+      "pending": "Our team is reviewing your application. We'll notify you as soon as there's news.",
+      "approved": "You're live. Owners in your city can now find and book you.",
+      "rejected": "Please review our notes and update your application.",
+      "suspended": "Your profile is paused. Please contact support."
+    },
+    "continueApplication": "Continue application",
+    "viewApplication": "View application"
+  },
+  "bookings": {
+    "title": "Bookings",
+    "emptyTitle": "No bookings yet",
+    "emptyBody": "Requests and your calendar will appear here once you're approved."
+  },
+  "earnings": {
+    "title": "Earnings",
+    "thisMonth": "This month",
+    "emptyTitle": "No earnings yet",
+    "emptyBody": "Completed visits and payouts will be listed here."
+  }
+}

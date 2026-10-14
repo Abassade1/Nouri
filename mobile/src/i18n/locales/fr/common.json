@@ -1,0 +1,20 @@
+{
+  "tagline": "Des soins attentionnés pour les animaux que vous aimez.",
+  "continue": "Continuer",
+  "cancel": "Annuler",
+  "retry": "Réessayer",
+  "back": "Retour",
+  "loading": "Chargement…",
+  "or": "ou",
+  "live": "Ouvert",
+  "comingSoon": "Bientôt disponible",
+  "notYetLive": "Bientôt disponible",
+  "optional": "Facultatif",
+  "preview": {
+    "banner": "Aperçu du design · données fictives",
+    "asOwner": "Aperçu en tant que propriétaire",
+    "asCarer": "Aperçu en tant qu'intervenant",
+    "asAdmin": "Aperçu en tant qu'administrateur",
+    "exit": "Quitter l'aperçu"
+  }
+}

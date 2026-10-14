@@ -1,0 +1,62 @@
+{
+  "pay": {
+    "confirm": "确认并支付 {{amount}}",
+    "note": "现在将收取 {{amount}}。服务完成后才会向 {{name}} 付款。",
+    "secure": "付款由 Stripe 安全处理。",
+    "processing": "正在确认付款…",
+    "paid": "已收到付款，您的预约已确认。",
+    "failed": "付款未成功，您没有被扣款。请重试。",
+    "unsupported": "请在手机应用中付款。",
+    "paidOn": "付款日期 {{date}}",
+    "refunded": "已退款 {{amount}}",
+    "needsPayment": "照护者已接受。请确认并付款以保留预约。",
+    "retry": "重新付款"
+  },
+  "cancel": {
+    "title": "取消此预约？",
+    "refundFull": "您将获得 {{amount}} 的全额退款。",
+    "refundPartial": "您将获得 {{percent}}%（{{amount}}）退款，因为服务将在 {{hours}} 小时内开始。",
+    "refundNone": "此预约已不可退款。",
+    "carerBody": "宠物主人将获得全额退款。",
+    "keep": "保留预约",
+    "confirm": "取消预约",
+    "done": "预约已取消。已退款：{{amount}}。",
+    "error": "无法取消此预约，请重试。"
+  },
+  "earnings": {
+    "thisMonth": "本月",
+    "released": "已转入您的账户",
+    "pending": "即将发放",
+    "upcoming": "即将进行的服务",
+    "holdNote": "每笔款项在服务完成 {{hours}} 小时后发放。",
+    "history": "最近服务",
+    "noHistory": "已付款的服务会列在这里。",
+    "bankPayouts": "银行转账",
+    "noPayouts": "Stripe 会按其自身周期将余额转入您的银行。转账记录将显示在这里。",
+    "state": {
+      "released": "已发放",
+      "pending": "{{date}} 发放",
+      "upcoming": "服务后"
+    },
+    "payoutStatus": {
+      "pending": "待处理",
+      "in_transit": "在途",
+      "paid": "已到账",
+      "failed": "失败"
+    }
+  },
+  "setup": {
+    "title": "设置收款",
+    "body": "通过 Stripe 绑定银行账户后才能收款。完成前不会向宠物主人展示您。",
+    "start": "设置收款",
+    "continue": "完成设置",
+    "pendingBody": "Stripe 还需要一些信息才能向您付款。",
+    "ready": "收款已启用",
+    "manage": "管理收款账户",
+    "checking": "检查中…",
+    "error": "无法连接 Stripe，请重试。",
+    "needBefore": "接受预约前请先设置收款。",
+    "goSetup": "前往收款设置",
+    "todayNudge": "您已获批。设置收款后才会向宠物主人展示。"
+  }
+}

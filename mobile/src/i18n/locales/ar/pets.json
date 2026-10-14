@@ -1,0 +1,178 @@
+{
+  "list": {
+    "title": "حيواناتك",
+    "add": "إضافة حيوان",
+    "emptyTitle": "لكل حيوان ملف واحد",
+    "emptyBody": "أضف أول حيوان لتجمع صحته وروتينه ورفاهه في مكان واحد."
+  },
+  "age": {
+    "years": "{{years}} سنة",
+    "months": "{{months}} شهر"
+  },
+  "species": {
+    "dog": "كلب",
+    "cat": "قطة",
+    "other": "أخرى"
+  },
+  "sex": {
+    "male": "ذكر",
+    "female": "أنثى",
+    "unknown": "غير محدد"
+  },
+  "tags": {
+    "healthy": "بصحة جيدة",
+    "senior": "مسنّ",
+    "special_needs": "احتياجات خاصة",
+    "on_medication": "يتناول دواء"
+  },
+  "insurance": {
+    "unknown": "غير محدد",
+    "none": "غير مؤمَّن",
+    "insured": "مؤمَّن"
+  },
+  "form": {
+    "newTitle": "حيوان جديد",
+    "editTitle": "تعديل الملف",
+    "identity": "الهوية",
+    "routine": "السلوك والروتين",
+    "health": "الصحة",
+    "name": "الاسم",
+    "species": "النوع",
+    "breed": "السلالة",
+    "sex": "الجنس",
+    "neutered": "معقَّم",
+    "ageYears": "العمر (سنوات)",
+    "ageMonths": "أشهر",
+    "weight": "الوزن (كغ)",
+    "status": "الحالة",
+    "behaviour": "ملاحظات السلوك",
+    "feeding": "روتين التغذية",
+    "walking": "روتين التمشية",
+    "quirks": "عادات وأمور يجب معرفتها",
+    "photoAdd": "إضافة صورة",
+    "photoChange": "تغيير الصورة",
+    "save": "حفظ",
+    "saving": "جارٍ الحفظ…",
+    "archive": "أرشفة هذا الحيوان",
+    "archiveConfirm": "هل تريد أرشفة {{name}}؟ سيبقى سجل رعايته محفوظًا.",
+    "healthPrivacy": "تُشارَك فقط مع مقدّمي الرعاية الذين لديهم حجز مؤكد معك، ولمدة 7 أيام بعده.",
+    "medicalNotes": "ملاحظات طبية",
+    "allergies": "الحساسية",
+    "allergiesHint": "افصل بينها بفواصل",
+    "microchip": "رقم الشريحة",
+    "insuranceStatus": "التأمين",
+    "insuranceProvider": "شركة التأمين",
+    "vetClinic": "العيادة البيطرية",
+    "vetName": "اسم الطبيب البيطري",
+    "vetPhone": "هاتف الطبيب البيطري"
+  },
+  "detail": {
+    "edit": "تعديل",
+    "routine": "السلوك والروتين",
+    "behaviour": "السلوك",
+    "feeding": "التغذية",
+    "walking": "التمشية",
+    "quirks": "من المفيد معرفته",
+    "health": "الصحة",
+    "medicalNotes": "ملاحظات طبية",
+    "allergies": "الحساسية",
+    "microchip": "الشريحة",
+    "insurance": "التأمين",
+    "vet": "الطبيب البيطري",
+    "callVet": "اتصل بالطبيب البيطري",
+    "none": "لم تتم إضافة شيء بعد.",
+    "weight": "{{kg}} كغ"
+  },
+  "meds": {
+    "title": "الأدوية",
+    "add": "إضافة دواء",
+    "name": "الدواء",
+    "dose": "الجرعة",
+    "frequency": "عدد المرات",
+    "times": "الأوقات",
+    "timesHint": "نظام 24 ساعة، مفصولة بفواصل، مثل 08:00, 20:00",
+    "instructions": "التعليمات",
+    "active": "نشط",
+    "paused": "متوقف مؤقتًا",
+    "pause": "إيقاف مؤقت",
+    "resume": "استئناف",
+    "remove": "إزالة",
+    "save": "إضافة",
+    "cancel": "إلغاء",
+    "empty": "لا توجد أدوية.",
+    "freq": {
+      "daily": "يوميًا",
+      "twice_daily": "مرتان يوميًا",
+      "weekly": "أسبوعيًا",
+      "as_needed": "عند الحاجة"
+    }
+  },
+  "wellbeing": {
+    "title": "الرفاه",
+    "intro": "يحدّث مقدّم الرعاية هذه القيم بعد كل زيارة. 1 ضعيف و5 ممتاز.",
+    "empty": "لا توجد درجات بعد. تظهر بعد الزيارة الأولى.",
+    "latest": "الأحدث",
+    "metrics": {
+      "health": "الصحة",
+      "nutrition_hydration": "التغذية والترطيب",
+      "activity": "النشاط",
+      "happiness": "السعادة"
+    },
+    "trendUp": "أعلى من المرة السابقة",
+    "trendDown": "أقل من المرة السابقة",
+    "trendSame": "مثل المرة السابقة",
+    "chartLabel": "اتجاه {{metric}}"
+  },
+  "history": {
+    "title": "سجل الرعاية",
+    "intro": "سجل دائم. لا يمكن تعديل الإدخالات أو حذفها.",
+    "empty": "لم يُسجَّل شيء بعد.",
+    "addVet": "تسجيل زيارة بيطرية",
+    "addNote": "إضافة ملاحظة",
+    "entryTitle": "العنوان",
+    "entryNote": "التفاصيل",
+    "entryDate": "التاريخ",
+    "dateHint": "YYYY-MM-DD، اتركه فارغًا لليوم",
+    "save": "حفظ في السجل",
+    "types": {
+      "visit_report": "تقرير الزيارة",
+      "medication_given": "إعطاء دواء",
+      "vet_visit": "زيارة بيطرية",
+      "concern_flag": "تنبيه بقلق",
+      "flag_action": "إجراء متخذ",
+      "booking_completed": "اكتملت الزيارة",
+      "note": "ملاحظة"
+    },
+    "flagActions": {
+      "acknowledged": "تم الاطلاع",
+      "called_vet": "تم الاتصال بالطبيب البيطري",
+      "booked_pet_taxi": "تم حجز نقل للحيوان",
+      "resolved": "تمت التسوية",
+      "note": "أُضيفت ملاحظة"
+    },
+    "severity": {
+      "info": "للعلم",
+      "concern": "قلق",
+      "urgent": "عاجل"
+    },
+    "categories": {
+      "health": "الصحة",
+      "behaviour": "السلوك",
+      "other": "أخرى"
+    },
+    "checklist": {
+      "fed": "تمت التغذية",
+      "walked": "تمت التمشية",
+      "meds_given": "أُعطي الدواء",
+      "water_refreshed": "ماء نظيف"
+    },
+    "photos": "الصور: {{count}}"
+  },
+  "errors": {
+    "required": "هذا الحقل مطلوب.",
+    "invalidNumber": "أدخل رقمًا صالحًا.",
+    "invalidTime": "استخدم نظام 24 ساعة مثل 08:00.",
+    "invalidDate": "استخدم الصيغة YYYY-MM-DD.",
+    "generic": "حدث خطأ ما. يرجى المحاولة مرة أخرى."
+  }
+}

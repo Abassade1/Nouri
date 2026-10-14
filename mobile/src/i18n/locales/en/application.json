@@ -1,0 +1,152 @@
+{
+  "hub": {
+    "title": "Your application",
+    "subtitle": "Complete each step, then submit for review. Our team reads every application personally.",
+    "complete": "Done",
+    "incomplete": "To do",
+    "submit": "Submit for review",
+    "submitting": "Submitting…",
+    "submitted": "Submitted",
+    "lockedPending": "Your application is under review, so it can't be edited right now. We'll let you know as soon as there's news.",
+    "rejectedTitle": "Needs changes",
+    "rejectedNotes": "Notes from our team",
+    "rejectedHelp": "Update your application, then submit it again.",
+    "readyHint": "Everything is complete. You can submit.",
+    "notReadyHint": "Finish the steps above to submit.",
+    "sections": {
+      "profile": "About you",
+      "profileBody": "City, bio, experience and service area",
+      "services": "Services & rates",
+      "servicesBody": "What you offer and what you charge",
+      "credentials": "Credentials",
+      "credentialsBody": "Certificates and documents we verify",
+      "references": "References",
+      "referencesBody": "Two people who can speak to your care",
+      "consent": "Consent",
+      "consentBody": "Background check and terms"
+    }
+  },
+  "profile": {
+    "title": "About you",
+    "city": "City",
+    "cityHint": "Cities currently open for applications.",
+    "noCities": "No cities are open yet.",
+    "displayName": "Name shown to owners",
+    "headline": "Headline",
+    "headlineHint": "One line, e.g. “Registered vet tech specialising in senior dogs”",
+    "bio": "Bio",
+    "bioHint": "Your experience, approach and what owners can expect.",
+    "years": "Years of experience",
+    "languages": "Languages you speak",
+    "specialties": "Specialties",
+    "radius": "Service radius (km)",
+    "postalCode": "Home postal code",
+    "postalHint": "Used to match you with nearby owners. Owners only ever see the first part.",
+    "save": "Save",
+    "saving": "Saving…"
+  },
+  "specialties": {
+    "senior_care": "Senior pets",
+    "medication": "Medication & medical care",
+    "anxious_pets": "Anxious or reactive pets",
+    "puppies": "Puppies",
+    "large_breeds": "Large breeds",
+    "special_needs": "Special needs"
+  },
+  "languages": {
+    "en": "English",
+    "fr": "French",
+    "ar": "Arabic",
+    "zh": "Chinese",
+    "es": "Spanish",
+    "pa": "Punjabi"
+  },
+  "services": {
+    "title": "Services & rates",
+    "intro": "Choose the services you offer and set your rate. Rates are before tax.",
+    "offer": "I offer this",
+    "rate": "Your rate",
+    "unit": {
+      "per_visit": "per visit",
+      "per_walk": "per walk",
+      "per_night": "per night",
+      "per_trip": "per trip"
+    },
+    "commissionNote": "Our commission is {{percent}} of your rate. You keep the rest.",
+    "noCity": "Choose your city in “About you” first to see the services available.",
+    "invalidRate": "Enter a rate between 1 and 10,000.",
+    "save": "Save rates"
+  },
+  "credentials": {
+    "title": "Credentials",
+    "intro": "Upload the certificates and documents that show your training. Our team verifies each one and issues your badges.",
+    "privacy": "Documents are stored privately and seen only by our review team.",
+    "add": "Add a credential",
+    "type": "Type",
+    "name": "Title",
+    "namePlaceholder": "e.g. Registered Veterinary Technician",
+    "issuer": "Issued by",
+    "issuedOn": "Issue date",
+    "expiresOn": "Expiry date",
+    "dateHint": "Format: YYYY-MM-DD",
+    "chooseFile": "Choose a file (PDF or photo)",
+    "fileChosen": "File selected",
+    "save": "Upload",
+    "uploading": "Uploading…",
+    "remove": "Remove",
+    "empty": "No credentials yet.",
+    "reviewNote": "Reviewer's note",
+    "expires": "Expires {{date}}",
+    "types": {
+      "vet_tech": "Veterinary technician certificate",
+      "trainer_cert": "Trainer certification",
+      "groomer_cert": "Groomer certification",
+      "first_aid": "Pet first aid / CPR",
+      "background_check": "Background check",
+      "insurance": "Liability insurance",
+      "id_document": "Government ID",
+      "other": "Other"
+    },
+    "status": {
+      "pending": "Awaiting review",
+      "verified": "Verified",
+      "rejected": "Not accepted"
+    }
+  },
+  "references": {
+    "title": "References",
+    "intro": "Add at least two people who can speak to your work with animals. We may contact them.",
+    "add": "Add a reference",
+    "name": "Name",
+    "relationship": "Relationship",
+    "relationshipHint": "e.g. Former employer, clinic manager",
+    "email": "Email",
+    "phone": "Phone",
+    "contactHint": "Provide an email or a phone number.",
+    "save": "Add",
+    "remove": "Remove",
+    "empty": "No references yet.",
+    "count": "{{count}} of 2 added"
+  },
+  "consent": {
+    "title": "Consent",
+    "intro": "We ask for only what we need to keep owners and pets safe.",
+    "backgroundCheck": "I consent to {{appName}} arranging a criminal background check and verifying my references and credentials. I understand this information is used only to assess my application.",
+    "terms": "I confirm the information I've provided is accurate, and I agree to the Terms of Service and Privacy Policy.",
+    "save": "Save consent"
+  },
+  "errors": {
+    "application_incomplete_profile": "Please complete “About you” first (city, name, bio and postal code).",
+    "application_missing_consent": "Please give both consents before submitting.",
+    "application_needs_credential": "Please upload at least one credential.",
+    "application_needs_two_references": "Please add at least two references.",
+    "application_needs_service": "Please offer at least one service with a rate.",
+    "invalidPostal": "Enter a valid postal code, for example {{example}}.",
+    "invalidDate": "Use the format YYYY-MM-DD.",
+    "required": "This field is required.",
+    "noFile": "Please choose a file.",
+    "fileTooLarge": "That file is too large (10 MB maximum).",
+    "contactRequired": "Provide an email or a phone number.",
+    "locked": "Your application is locked while it is being reviewed."
+  }
+}

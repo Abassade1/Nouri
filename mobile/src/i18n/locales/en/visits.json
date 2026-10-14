@@ -1,0 +1,144 @@
+{
+  "report": {
+    "title": "Visit report",
+    "intro": "Share how the visit went. Reports can't be edited once sent.",
+    "summary": "How did it go?",
+    "summaryHint": "A few honest lines for the owner.",
+    "checklist": {
+      "fed": "Fed",
+      "walked": "Walked",
+      "meds_given": "Medication given",
+      "water_refreshed": "Fresh water"
+    },
+    "meds": "Medications given",
+    "noMeds": "No active medications.",
+    "scores": "Wellbeing",
+    "scoresIntro": "Rate each from 1 (poor) to 5 (excellent).",
+    "photos": "Photos",
+    "addPhotos": "Add photos",
+    "photoLimit": "Up to 6 photos.",
+    "removePhoto": "Remove",
+    "alsoComplete": "Mark the visit as completed",
+    "submit": "Send report",
+    "submitting": "Sending…",
+    "sentTitle": "Report sent",
+    "sentBody": "The owner can see it now.",
+    "needScores": "Please rate every metric for each pet.",
+    "error": "We couldn't send the report. Please try again.",
+    "back": "Back to booking"
+  },
+  "feed": {
+    "title": "Visit reports",
+    "empty": "No visit reports yet.",
+    "scores": "Scores"
+  },
+  "visit": {
+    "start": "Start visit",
+    "complete": "Complete visit",
+    "viewPet": "View full profile",
+    "raiseConcern": "Raise a concern",
+    "submitReport": "Submit visit report",
+    "petProfile": "Pet profile",
+    "actionError": "That didn't work. Please try again."
+  },
+  "concern": {
+    "title": "Raise a concern",
+    "intro": "The owner is notified straight away, with photos if you add them.",
+    "pet": "Which pet?",
+    "category": "What kind of concern?",
+    "severity": "How urgent?",
+    "notes": "What did you notice?",
+    "notesHint": "Be specific: what, where, since when.",
+    "photos": "Photos",
+    "submit": "Notify the owner",
+    "submitting": "Sending…",
+    "sentTitle": "The owner has been notified",
+    "sentBody": "You can keep caring for the pet. The owner decides what happens next.",
+    "categories": {
+      "health": "Health",
+      "behaviour": "Behaviour",
+      "other": "Other"
+    },
+    "severities": {
+      "info": "For their information",
+      "concern": "Needs attention",
+      "urgent": "Urgent"
+    },
+    "required": "Please describe what you noticed."
+  },
+  "flag": {
+    "title": "Concern about {{pet}}",
+    "raised": "Raised by your carer {{date}}",
+    "severity": "Priority",
+    "notes": "What your carer noticed",
+    "photos": "Photos",
+    "next": "What would you like to do?",
+    "callVet": "Call vet",
+    "noVet": "Add your vet's number to {{pet}}'s profile to call from here.",
+    "bookTaxi": "Book a pet taxi to the vet",
+    "acknowledge": "Acknowledge",
+    "resolve": "Mark as resolved",
+    "done": "What's been done",
+    "none": "Nothing yet.",
+    "notFound": "We couldn't find this concern.",
+    "homeTitle": "Needs your attention",
+    "homeItem": "Concern about {{pet}}",
+    "actionError": "We couldn't save that. Please try again."
+  },
+  "review": {
+    "title": "Review your visit",
+    "rating": "Your rating",
+    "comment": "Tell others about your experience",
+    "optional": "Optional",
+    "submit": "Submit review",
+    "thanks": "Thank you for your review.",
+    "yours": "Your review",
+    "leave": "Leave a review",
+    "pickRating": "Please choose a rating.",
+    "error": "We couldn't save your review. Please try again."
+  },
+  "dispute": {
+    "open": "Report a problem",
+    "title": "Report a problem with this visit",
+    "reason": "What went wrong?",
+    "submit": "Send to our team",
+    "sent": "We've paused your carer's payout while our team looks into it.",
+    "required": "Please tell us what happened."
+  },
+  "carerReviews": {
+    "title": "Your reviews",
+    "empty": "No reviews yet. They'll appear here after completed visits.",
+    "average": "Average rating",
+    "open": "See your reviews"
+  },
+  "waitlist": {
+    "link": "Not in a live city? Join the waitlist",
+    "title": "Join the waitlist",
+    "intro": "We open one city at a time, by invitation. Tell us where you are and we'll write when we arrive.",
+    "email": "Email",
+    "city": "City",
+    "other": "My city isn't listed",
+    "cityName": "Your city",
+    "iAm": "I'm a",
+    "owner": "Pet owner",
+    "carer": "Pet care professional",
+    "consent": "I agree to be contacted by {{appName}} about opening in my city. I can unsubscribe at any time.",
+    "submit": "Join the waitlist",
+    "doneTitle": "You're on the list",
+    "doneBody": "We'll email you when {{appName}} opens in {{city}}.",
+    "errors": {
+      "email": "Enter a valid email address.",
+      "city": "Tell us your city.",
+      "consent": "Please accept to continue.",
+      "generic": "We couldn't add you. Please try again."
+    },
+    "join": "Join waitlist"
+  },
+  "push": {
+    "title": "Notifications",
+    "body": "Alerts for booking requests, visit reports and any concerns about your pets.",
+    "enable": "Turn on notifications",
+    "on": "Notifications are on",
+    "blocked": "Notifications are turned off in your phone's settings."
+  }
+}

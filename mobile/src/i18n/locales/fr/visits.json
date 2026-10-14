@@ -1,0 +1,144 @@
+{
+  "report": {
+    "title": "Rapport de visite",
+    "intro": "Racontez comment s'est passée la visite. Un rapport envoyé ne peut plus être modifié.",
+    "summary": "Comment cela s'est-il passé ?",
+    "summaryHint": "Quelques lignes honnêtes pour le propriétaire.",
+    "checklist": {
+      "fed": "Nourri",
+      "walked": "Promené",
+      "meds_given": "Médicament donné",
+      "water_refreshed": "Eau fraîche"
+    },
+    "meds": "Médicaments donnés",
+    "noMeds": "Aucun médicament actif.",
+    "scores": "Bien-être",
+    "scoresIntro": "Évaluez chaque élément de 1 (faible) à 5 (excellent).",
+    "photos": "Photos",
+    "addPhotos": "Ajouter des photos",
+    "photoLimit": "Jusqu'à 6 photos.",
+    "removePhoto": "Retirer",
+    "alsoComplete": "Marquer la visite comme terminée",
+    "submit": "Envoyer le rapport",
+    "submitting": "Envoi…",
+    "sentTitle": "Rapport envoyé",
+    "sentBody": "Le propriétaire peut maintenant le consulter.",
+    "needScores": "Veuillez évaluer chaque élément pour chaque animal.",
+    "error": "Impossible d'envoyer le rapport. Veuillez réessayer.",
+    "back": "Retour à la réservation"
+  },
+  "feed": {
+    "title": "Rapports de visite",
+    "empty": "Aucun rapport de visite pour le moment.",
+    "scores": "Notes"
+  },
+  "visit": {
+    "start": "Commencer la visite",
+    "complete": "Terminer la visite",
+    "viewPet": "Voir le profil complet",
+    "raiseConcern": "Signaler une préoccupation",
+    "submitReport": "Soumettre un rapport de visite",
+    "petProfile": "Profil de l'animal",
+    "actionError": "Cela n'a pas fonctionné. Veuillez réessayer."
+  },
+  "concern": {
+    "title": "Signaler une préoccupation",
+    "intro": "Le propriétaire est averti immédiatement, avec des photos si vous en ajoutez.",
+    "pet": "Quel animal ?",
+    "category": "Quel type de préoccupation ?",
+    "severity": "Quel degré d'urgence ?",
+    "notes": "Qu'avez-vous remarqué ?",
+    "notesHint": "Soyez précis : quoi, où, depuis quand.",
+    "photos": "Photos",
+    "submit": "Avertir le propriétaire",
+    "submitting": "Envoi…",
+    "sentTitle": "Le propriétaire a été averti",
+    "sentBody": "Vous pouvez continuer à vous occuper de l'animal. Le propriétaire décide de la suite.",
+    "categories": {
+      "health": "Santé",
+      "behaviour": "Comportement",
+      "other": "Autre"
+    },
+    "severities": {
+      "info": "À titre informatif",
+      "concern": "Requiert de l'attention",
+      "urgent": "Urgent"
+    },
+    "required": "Veuillez décrire ce que vous avez remarqué."
+  },
+  "flag": {
+    "title": "Préoccupation concernant {{pet}}",
+    "raised": "Signalée par votre intervenant le {{date}}",
+    "severity": "Priorité",
+    "notes": "Ce que votre intervenant a remarqué",
+    "photos": "Photos",
+    "next": "Que souhaitez-vous faire ?",
+    "callVet": "Appeler le vétérinaire",
+    "noVet": "Ajoutez le numéro de votre vétérinaire au profil de {{pet}} pour l'appeler d'ici.",
+    "bookTaxi": "Réserver un taxi pour animaux vers le vétérinaire",
+    "acknowledge": "Prendre en compte",
+    "resolve": "Marquer comme réglé",
+    "done": "Ce qui a été fait",
+    "none": "Rien pour le moment.",
+    "notFound": "Préoccupation introuvable.",
+    "homeTitle": "Requiert votre attention",
+    "homeItem": "Préoccupation concernant {{pet}}",
+    "actionError": "Impossible d'enregistrer. Veuillez réessayer."
+  },
+  "review": {
+    "title": "Évaluez votre visite",
+    "rating": "Votre note",
+    "comment": "Parlez de votre expérience aux autres",
+    "optional": "Facultatif",
+    "submit": "Soumettre l'avis",
+    "thanks": "Merci pour votre avis.",
+    "yours": "Votre avis",
+    "leave": "Laisser un avis",
+    "pickRating": "Veuillez choisir une note.",
+    "error": "Impossible d'enregistrer votre avis. Veuillez réessayer."
+  },
+  "dispute": {
+    "open": "Signaler un problème",
+    "title": "Signaler un problème avec cette visite",
+    "reason": "Qu'est-ce qui n'a pas fonctionné ?",
+    "submit": "Envoyer à notre équipe",
+    "sent": "Nous avons suspendu le versement à votre intervenant pendant que notre équipe examine la situation.",
+    "required": "Veuillez nous dire ce qui s'est passé."
+  },
+  "carerReviews": {
+    "title": "Vos avis",
+    "empty": "Aucun avis pour le moment. Ils apparaîtront ici après les visites terminées.",
+    "average": "Note moyenne",
+    "open": "Voir vos avis"
+  },
+  "waitlist": {
+    "link": "Pas dans une ville ouverte ? Joignez la liste d'attente",
+    "title": "Joindre la liste d'attente",
+    "intro": "Nous ouvrons une ville à la fois, sur invitation. Dites-nous où vous êtes et nous vous écrirons à notre arrivée.",
+    "email": "Courriel",
+    "city": "Ville",
+    "other": "Ma ville n'est pas dans la liste",
+    "cityName": "Votre ville",
+    "iAm": "Je suis",
+    "owner": "Propriétaire d'animal",
+    "carer": "Professionnel des soins aux animaux",
+    "consent": "J'accepte d'être contacté par {{appName}} au sujet de l'ouverture dans ma ville. Je peux me désabonner en tout temps.",
+    "submit": "Joindre la liste d'attente",
+    "doneTitle": "Vous êtes sur la liste",
+    "doneBody": "Nous vous écrirons lorsque {{appName}} ouvrira à {{city}}.",
+    "errors": {
+      "email": "Entrez une adresse courriel valide.",
+      "city": "Dites-nous votre ville.",
+      "consent": "Veuillez accepter pour continuer.",
+      "generic": "Impossible de vous ajouter. Veuillez réessayer."
+    },
+    "join": "Joindre la liste d'attente"
+  },
+  "push": {
+    "title": "Notifications",
+    "body": "Alertes pour les demandes de réservation, les rapports de visite et toute préoccupation concernant vos animaux.",
+    "enable": "Activer les notifications",
+    "on": "Les notifications sont activées",
+    "blocked": "Les notifications sont désactivées dans les réglages de votre téléphone."
+  }
+}

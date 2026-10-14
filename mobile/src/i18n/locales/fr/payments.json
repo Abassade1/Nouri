@@ -1,0 +1,62 @@
+{
+  "pay": {
+    "confirm": "Confirmer et payer {{amount}}",
+    "note": "{{amount}} vous seront facturés maintenant. {{name}} est payé après la fin de la visite.",
+    "secure": "Les paiements sont traités de façon sécurisée par Stripe.",
+    "processing": "Confirmation de votre paiement…",
+    "paid": "Paiement reçu. Votre réservation est confirmée.",
+    "failed": "Le paiement n'a pas abouti et vous n'avez pas été facturé. Veuillez réessayer.",
+    "unsupported": "Les paiements sont disponibles dans l'application mobile.",
+    "paidOn": "Payé le {{date}}",
+    "refunded": "Remboursé : {{amount}}",
+    "needsPayment": "Votre intervenant a accepté. Confirmez et payez pour réserver.",
+    "retry": "Réessayer le paiement"
+  },
+  "cancel": {
+    "title": "Annuler cette réservation ?",
+    "refundFull": "Vous recevrez un remboursement complet de {{amount}}.",
+    "refundPartial": "Vous recevrez {{percent}} % ({{amount}}), car la visite commence dans moins de {{hours}} heures.",
+    "refundNone": "Cette réservation n'est plus remboursable.",
+    "carerBody": "Le propriétaire sera remboursé intégralement.",
+    "keep": "Conserver la réservation",
+    "confirm": "Annuler la réservation",
+    "done": "Réservation annulée. Remboursé : {{amount}}.",
+    "error": "Impossible d'annuler cette réservation. Veuillez réessayer."
+  },
+  "earnings": {
+    "thisMonth": "Ce mois-ci",
+    "released": "Versé sur votre compte",
+    "pending": "Versement bientôt",
+    "upcoming": "Visites à venir",
+    "holdNote": "Chaque versement est effectué {{hours}} heures après la fin d'une visite.",
+    "history": "Visites récentes",
+    "noHistory": "Les visites payées seront listées ici.",
+    "bankPayouts": "Virements bancaires",
+    "noPayouts": "Stripe envoie votre solde à votre banque selon son propre calendrier. Les virements apparaîtront ici.",
+    "state": {
+      "released": "Versé",
+      "pending": "Versement le {{date}}",
+      "upcoming": "Après la visite"
+    },
+    "payoutStatus": {
+      "pending": "En attente",
+      "in_transit": "En route",
+      "paid": "Payé",
+      "failed": "Échec"
+    }
+  },
+  "setup": {
+    "title": "Configurer les versements",
+    "body": "Reliez votre compte bancaire par l'entremise de Stripe pour être payé. Vous n'apparaîtrez pas aux propriétaires tant que ce n'est pas fait.",
+    "start": "Configurer les versements",
+    "continue": "Terminer la configuration",
+    "pendingBody": "Stripe a encore besoin de quelques renseignements avant que vous puissiez être payé.",
+    "ready": "Les versements sont actifs",
+    "manage": "Gérer le compte de versement",
+    "checking": "Vérification…",
+    "error": "Impossible de joindre Stripe. Veuillez réessayer.",
+    "needBefore": "Configurez les versements avant d'accepter des réservations.",
+    "goSetup": "Aller aux versements",
+    "todayNudge": "Vous êtes approuvé. Configurez les versements pour apparaître aux propriétaires."
+  }
+}

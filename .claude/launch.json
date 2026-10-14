@@ -1,0 +1,23 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "mobile-web",
+      "runtimeExecutable": "sh",
+      "runtimeArgs": [
+        "-c",
+        "cd mobile && npx expo start --web --port 8081"
+      ],
+      "port": 8081
+    },
+    {
+      "name": "admin",
+      "runtimeExecutable": "sh",
+      "runtimeArgs": [
+        "-c",
+        "cd admin && npx next dev --port 3001"
+      ],
+      "port": 3001
+    }
+  ]
+}

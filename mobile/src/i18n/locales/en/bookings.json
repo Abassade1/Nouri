@@ -1,0 +1,73 @@
+{
+  "list": {
+    "title": "Bookings",
+    "upcoming": "Upcoming",
+    "past": "Past",
+    "requests": "Requests",
+    "emptyTitle": "No bookings yet",
+    "emptyBody": "Your upcoming and past care will appear here.",
+    "carerEmptyBody": "Requests and your calendar will appear here once you're approved.",
+    "noRequests": "No new requests.",
+    "agenda": "Upcoming"
+  },
+  "status": {
+    "requested": "Awaiting carer",
+    "accepted": "Accepted",
+    "declined": "Declined",
+    "payment_failed": "Payment needed",
+    "confirmed": "Confirmed",
+    "in_progress": "In progress",
+    "completed": "Completed",
+    "cancelled": "Cancelled",
+    "disputed": "Under review"
+  },
+  "detail": {
+    "title": "Booking",
+    "notFound": "We couldn't find this booking.",
+    "when": "When",
+    "service": "Service",
+    "carer": "Carer",
+    "owner": "Owner",
+    "pets": "Pets",
+    "notes": "Notes",
+    "ownerNotes": "Notes from the owner",
+    "price": "Price",
+    "subtotal": "Subtotal",
+    "total": "Total",
+    "commission": "Platform fee",
+    "payout": "Your payout",
+    "nights": "Nights: {{count}}",
+    "cancel": "Cancel request",
+    "cancelBooking": "Cancel booking",
+    "accept": "Accept",
+    "decline": "Decline",
+    "acceptedNote": "Your carer accepted. Payment and confirmation open in the next release.",
+    "requestedNote": "Waiting for your carer to respond. You haven't been charged.",
+    "declinedNote": "Your carer couldn't take this one. You haven't been charged.",
+    "cancelledNote": "This booking was cancelled.",
+    "carerAcceptedNote": "You accepted. The owner will be asked to confirm and pay.",
+    "actionError": "That didn't work. The time may have been taken, or the status changed. Please refresh.",
+    "behaviour": "Behaviour"
+  },
+  "availability": {
+    "title": "Weekly availability",
+    "intro": "Owners can only request times inside these hours. Times are in your city's local time.",
+    "closed": "Closed",
+    "add": "Add hours",
+    "from": "From",
+    "to": "To",
+    "hint": "24-hour, e.g. 09:00",
+    "save": "Add",
+    "cancel": "Cancel",
+    "remove": "Remove",
+    "cardTitle": "Weekly availability",
+    "cardBody": "Set the hours owners can book you.",
+    "cardAction": "Edit hours",
+    "errors": {
+      "invalidTime": "Use 24-hour times like 09:00.",
+      "order": "The end must be after the start.",
+      "overlap": "These hours overlap another window that day.",
+      "generic": "We couldn't save that. Please try again."
+    }
+  }
+}

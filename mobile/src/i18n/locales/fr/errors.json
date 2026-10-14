@@ -1,0 +1,12 @@
+{
+  "generic": "Une erreur s'est produite. Veuillez réessayer.",
+  "network": "Impossible de joindre le serveur. Vérifiez votre connexion.",
+  "invalidCredentials": "Ce courriel et ce mot de passe ne correspondent pas.",
+  "emailTaken": "Un compte existe déjà avec ce courriel.",
+  "weakPassword": "Choisissez un mot de passe d'au moins 8 caractères.",
+  "invalidEmail": "Entrez une adresse courriel valide.",
+  "required": "Ce champ est obligatoire.",
+  "consentRequired": "Veuillez accepter pour continuer.",
+  "notConfigured": "L'application n'est pas encore reliée à un serveur. Ajoutez vos clés Supabase dans .env (voir le README).",
+  "socialCancelled": "La connexion a été annulée."
+}

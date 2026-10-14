@@ -1,0 +1,178 @@
+{
+  "list": {
+    "title": "Your pets",
+    "add": "Add a pet",
+    "emptyTitle": "Every pet, one profile",
+    "emptyBody": "Add your first pet to keep their health, routine and wellbeing in one place."
+  },
+  "age": {
+    "years": "{{years}} yr",
+    "months": "{{months}} mo"
+  },
+  "species": {
+    "dog": "Dog",
+    "cat": "Cat",
+    "other": "Other"
+  },
+  "sex": {
+    "male": "Male",
+    "female": "Female",
+    "unknown": "Not specified"
+  },
+  "tags": {
+    "healthy": "Healthy",
+    "senior": "Senior",
+    "special_needs": "Special needs",
+    "on_medication": "On medication"
+  },
+  "insurance": {
+    "unknown": "Not specified",
+    "none": "Not insured",
+    "insured": "Insured"
+  },
+  "form": {
+    "newTitle": "New pet",
+    "editTitle": "Edit profile",
+    "identity": "Identity",
+    "routine": "Behaviour & routine",
+    "health": "Health",
+    "name": "Name",
+    "species": "Species",
+    "breed": "Breed",
+    "sex": "Sex",
+    "neutered": "Spayed / neutered",
+    "ageYears": "Age (years)",
+    "ageMonths": "Months",
+    "weight": "Weight (kg)",
+    "status": "Status",
+    "behaviour": "Behaviour notes",
+    "feeding": "Feeding routine",
+    "walking": "Walking routine",
+    "quirks": "Quirks & things to know",
+    "photoAdd": "Add a photo",
+    "photoChange": "Change photo",
+    "save": "Save",
+    "saving": "Saving…",
+    "archive": "Archive this pet",
+    "archiveConfirm": "Archive {{name}}? Their care history is kept.",
+    "healthPrivacy": "Shared only with carers who have a confirmed booking with you, and for 7 days afterwards.",
+    "medicalNotes": "Medical notes",
+    "allergies": "Allergies",
+    "allergiesHint": "Separate with commas",
+    "microchip": "Microchip ID",
+    "insuranceStatus": "Insurance",
+    "insuranceProvider": "Insurance provider",
+    "vetClinic": "Vet clinic",
+    "vetName": "Vet name",
+    "vetPhone": "Vet phone"
+  },
+  "detail": {
+    "edit": "Edit",
+    "routine": "Behaviour & routine",
+    "behaviour": "Behaviour",
+    "feeding": "Feeding",
+    "walking": "Walking",
+    "quirks": "Good to know",
+    "health": "Health",
+    "medicalNotes": "Medical notes",
+    "allergies": "Allergies",
+    "microchip": "Microchip",
+    "insurance": "Insurance",
+    "vet": "Vet",
+    "callVet": "Call vet",
+    "none": "Nothing added yet.",
+    "weight": "{{kg}} kg"
+  },
+  "meds": {
+    "title": "Medications",
+    "add": "Add medication",
+    "name": "Medication",
+    "dose": "Dose",
+    "frequency": "How often",
+    "times": "Times",
+    "timesHint": "24-hour, separated by commas, e.g. 08:00, 20:00",
+    "instructions": "Instructions",
+    "active": "Active",
+    "paused": "Paused",
+    "pause": "Pause",
+    "resume": "Resume",
+    "remove": "Remove",
+    "save": "Add",
+    "cancel": "Cancel",
+    "empty": "No medications.",
+    "freq": {
+      "daily": "Daily",
+      "twice_daily": "Twice daily",
+      "weekly": "Weekly",
+      "as_needed": "As needed"
+    }
+  },
+  "wellbeing": {
+    "title": "Wellbeing",
+    "intro": "Your carer updates these after each visit. 1 is poor, 5 is excellent.",
+    "empty": "No scores yet. They appear after the first visit.",
+    "latest": "Latest",
+    "metrics": {
+      "health": "Health",
+      "nutrition_hydration": "Nutrition & hydration",
+      "activity": "Activity",
+      "happiness": "Happiness"
+    },
+    "trendUp": "Up from last time",
+    "trendDown": "Down from last time",
+    "trendSame": "Same as last time",
+    "chartLabel": "{{metric}} trend"
+  },
+  "history": {
+    "title": "Care history",
+    "intro": "A permanent record. Entries can't be edited or removed.",
+    "empty": "Nothing recorded yet.",
+    "addVet": "Log a vet visit",
+    "addNote": "Add a note",
+    "entryTitle": "Title",
+    "entryNote": "Details",
+    "entryDate": "Date",
+    "dateHint": "YYYY-MM-DD, leave empty for today",
+    "save": "Save to history",
+    "types": {
+      "visit_report": "Visit report",
+      "medication_given": "Medication given",
+      "vet_visit": "Vet visit",
+      "concern_flag": "Concern raised",
+      "flag_action": "Action taken",
+      "booking_completed": "Visit completed",
+      "note": "Note"
+    },
+    "flagActions": {
+      "acknowledged": "Acknowledged",
+      "called_vet": "Called the vet",
+      "booked_pet_taxi": "Booked a pet taxi",
+      "resolved": "Marked resolved",
+      "note": "Note added"
+    },
+    "severity": {
+      "info": "For your information",
+      "concern": "Concern",
+      "urgent": "Urgent"
+    },
+    "categories": {
+      "health": "Health",
+      "behaviour": "Behaviour",
+      "other": "Other"
+    },
+    "checklist": {
+      "fed": "Fed",
+      "walked": "Walked",
+      "meds_given": "Medication given",
+      "water_refreshed": "Fresh water"
+    },
+    "photos": "Photos: {{count}}"
+  },
+  "errors": {
+    "required": "This field is required.",
+    "invalidNumber": "Enter a valid number.",
+    "invalidTime": "Use 24-hour times like 08:00.",
+    "invalidDate": "Use the format YYYY-MM-DD.",
+    "generic": "Something went wrong. Please try again."
+  }
+}

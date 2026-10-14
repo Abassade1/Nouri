@@ -1,0 +1,152 @@
+{
+  "hub": {
+    "title": "您的申请",
+    "subtitle": "完成每个步骤后提交审核。我们的团队会亲自阅读每份申请。",
+    "complete": "已完成",
+    "incomplete": "待完成",
+    "submit": "提交审核",
+    "submitting": "提交中…",
+    "submitted": "已提交",
+    "lockedPending": "您的申请正在审核中，暂时无法编辑。有进展我们会立即通知您。",
+    "rejectedTitle": "需要修改",
+    "rejectedNotes": "团队的意见",
+    "rejectedHelp": "请更新申请后重新提交。",
+    "readyHint": "全部完成，可以提交。",
+    "notReadyHint": "请先完成上面的步骤再提交。",
+    "sections": {
+      "profile": "关于您",
+      "profileBody": "城市、简介、经验和服务范围",
+      "services": "服务与价格",
+      "servicesBody": "您提供的服务及收费",
+      "credentials": "资质证明",
+      "credentialsBody": "我们核实的证书和文件",
+      "references": "推荐人",
+      "referencesBody": "两位可以证明您照护能力的人",
+      "consent": "授权同意",
+      "consentBody": "背景调查与条款"
+    }
+  },
+  "profile": {
+    "title": "关于您",
+    "city": "城市",
+    "cityHint": "目前开放申请的城市。",
+    "noCities": "暂无开放的城市。",
+    "displayName": "向宠物主人显示的名字",
+    "headline": "一句话介绍",
+    "headlineHint": "一句话，例如“专注老年犬的注册兽医技师”",
+    "bio": "个人简介",
+    "bioHint": "您的经验、方式，以及宠物主人可以期待什么。",
+    "years": "从业年限",
+    "languages": "您会说的语言",
+    "specialties": "专长",
+    "radius": "服务半径（公里）",
+    "postalCode": "住所邮政编码",
+    "postalHint": "用于匹配附近的宠物主人。主人只会看到前半部分。",
+    "save": "保存",
+    "saving": "保存中…"
+  },
+  "specialties": {
+    "senior_care": "老年宠物",
+    "medication": "用药与医疗护理",
+    "anxious_pets": "焦虑或易激动的宠物",
+    "puppies": "幼犬",
+    "large_breeds": "大型犬",
+    "special_needs": "特殊需求"
+  },
+  "languages": {
+    "en": "英语",
+    "fr": "法语",
+    "ar": "阿拉伯语",
+    "zh": "中文",
+    "es": "西班牙语",
+    "pa": "旁遮普语"
+  },
+  "services": {
+    "title": "服务与价格",
+    "intro": "选择您提供的服务并设定价格。价格为税前价格。",
+    "offer": "我提供此服务",
+    "rate": "您的价格",
+    "unit": {
+      "per_visit": "每次上门",
+      "per_walk": "每次遛狗",
+      "per_night": "每晚",
+      "per_trip": "每趟"
+    },
+    "commissionNote": "平台佣金为您价格的 {{percent}}，其余归您。",
+    "noCity": "请先在“关于您”中选择城市，以查看可提供的服务。",
+    "invalidRate": "请输入 1 到 10,000 之间的价格。",
+    "save": "保存价格"
+  },
+  "credentials": {
+    "title": "资质证明",
+    "intro": "上传证明您所受培训的证书和文件。我们的团队会逐一核实并为您颁发徽章。",
+    "privacy": "文件私密存储，仅供审核团队查看。",
+    "add": "添加资质",
+    "type": "类型",
+    "name": "名称",
+    "namePlaceholder": "例如：注册兽医技师",
+    "issuer": "颁发机构",
+    "issuedOn": "颁发日期",
+    "expiresOn": "到期日期",
+    "dateHint": "格式：YYYY-MM-DD",
+    "chooseFile": "选择文件（PDF 或照片）",
+    "fileChosen": "已选择文件",
+    "save": "上传",
+    "uploading": "上传中…",
+    "remove": "移除",
+    "empty": "暂无资质证明。",
+    "reviewNote": "审核意见",
+    "expires": "有效期至 {{date}}",
+    "types": {
+      "vet_tech": "兽医技师证书",
+      "trainer_cert": "训练师认证",
+      "groomer_cert": "美容师认证",
+      "first_aid": "宠物急救 / 心肺复苏",
+      "background_check": "背景调查",
+      "insurance": "责任保险",
+      "id_document": "政府签发身份证件",
+      "other": "其他"
+    },
+    "status": {
+      "pending": "等待审核",
+      "verified": "已核实",
+      "rejected": "未通过"
+    }
+  },
+  "references": {
+    "title": "推荐人",
+    "intro": "请至少添加两位能证明您与动物相处经验的人。我们可能会联系他们。",
+    "add": "添加推荐人",
+    "name": "姓名",
+    "relationship": "关系",
+    "relationshipHint": "例如：前雇主、诊所经理",
+    "email": "电子邮箱",
+    "phone": "电话",
+    "contactHint": "请提供邮箱或电话。",
+    "save": "添加",
+    "remove": "移除",
+    "empty": "暂无推荐人。",
+    "count": "已添加 {{count}} / 2"
+  },
+  "consent": {
+    "title": "授权同意",
+    "intro": "我们只收集保障宠物主人和宠物安全所必需的信息。",
+    "backgroundCheck": "我同意 {{appName}} 进行犯罪背景调查，并核实我的推荐人和资质。我了解这些信息仅用于评估我的申请。",
+    "terms": "我确认所提供的信息真实准确，并同意服务条款和隐私政策。",
+    "save": "保存同意"
+  },
+  "errors": {
+    "application_incomplete_profile": "请先完成“关于您”（城市、姓名、简介和邮政编码）。",
+    "application_missing_consent": "提交前请给出两项同意。",
+    "application_needs_credential": "请至少上传一项资质证明。",
+    "application_needs_two_references": "请至少添加两位推荐人。",
+    "application_needs_service": "请至少提供一项带价格的服务。",
+    "invalidPostal": "请输入有效的邮政编码，例如 {{example}}。",
+    "invalidDate": "请使用 YYYY-MM-DD 格式。",
+    "required": "此项为必填。",
+    "noFile": "请选择文件。",
+    "fileTooLarge": "文件过大（最大 10 MB）。",
+    "contactRequired": "请提供邮箱或电话。",
+    "locked": "审核期间申请已锁定。"
+  }
+}

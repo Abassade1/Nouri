@@ -1,0 +1,15 @@
+{
+  "owner": {
+    "home": "الرئيسية",
+    "discover": "استكشف",
+    "bookings": "الحجوزات",
+    "pets": "الحيوانات",
+    "account": "الحساب"
+  },
+  "carer": {
+    "today": "اليوم",
+    "bookings": "الحجوزات",
+    "earnings": "الأرباح",
+    "account": "الحساب"
+  }
+}

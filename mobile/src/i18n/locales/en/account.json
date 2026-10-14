@@ -1,0 +1,18 @@
+{
+  "title": "Account",
+  "language": "Language",
+  "languageHint": "Changes the language and reading direction of the app.",
+  "signedInAs": "Signed in as",
+  "role": {
+    "owner": "Pet owner",
+    "carer": "Pet care professional",
+    "admin": "Administrator"
+  },
+  "privacy": "Privacy & data",
+  "signOut": "Sign out",
+  "restart": {
+    "title": "Restart to apply",
+    "body": "{{appName}} needs to restart to switch the reading direction.",
+    "confirm": "Restart now"
+  }
+}

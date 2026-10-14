@@ -1,0 +1,18 @@
+{
+  "title": "Compte",
+  "language": "Langue",
+  "languageHint": "Modifie la langue et le sens de lecture de l'application.",
+  "signedInAs": "Connecté en tant que",
+  "role": {
+    "owner": "Propriétaire d'animal",
+    "carer": "Professionnel des soins aux animaux",
+    "admin": "Administrateur"
+  },
+  "privacy": "Confidentialité et données",
+  "signOut": "Se déconnecter",
+  "restart": {
+    "title": "Redémarrer pour appliquer",
+    "body": "{{appName}} doit redémarrer pour changer le sens de lecture.",
+    "confirm": "Redémarrer maintenant"
+  }
+}

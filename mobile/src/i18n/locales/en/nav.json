@@ -1,0 +1,15 @@
+{
+  "owner": {
+    "home": "Home",
+    "discover": "Discover",
+    "bookings": "Bookings",
+    "pets": "Pets",
+    "account": "Account"
+  },
+  "carer": {
+    "today": "Today",
+    "bookings": "Bookings",
+    "earnings": "Earnings",
+    "account": "Account"
+  }
+}

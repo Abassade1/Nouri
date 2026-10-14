@@ -1,0 +1,37 @@
+{
+  "today": {
+    "title": "Votre pratique",
+    "applicationTitle": "Votre candidature",
+    "startApplication": "Commencer la candidature",
+    "availableSoon": "La candidature ouvre dans la prochaine version",
+    "status": {
+      "none": "Non commencée",
+      "draft": "Brouillon",
+      "pending": "En cours d'examen",
+      "approved": "Approuvée",
+      "rejected": "Modifications requises",
+      "suspended": "Suspendue"
+    },
+    "statusBody": {
+      "none": "Parlez-nous de votre expérience et joignez vos qualifications. Notre équipe examine chaque candidature personnellement.",
+      "draft": "Terminez votre candidature et soumettez-la pour examen.",
+      "pending": "Notre équipe examine votre candidature. Nous vous informerons dès qu'il y aura du nouveau.",
+      "approved": "Vous êtes en ligne. Les propriétaires de votre ville peuvent maintenant vous trouver et vous réserver.",
+      "rejected": "Veuillez consulter nos commentaires et mettre à jour votre candidature.",
+      "suspended": "Votre profil est suspendu. Veuillez communiquer avec le soutien."
+    },
+    "continueApplication": "Poursuivre la candidature",
+    "viewApplication": "Voir la candidature"
+  },
+  "bookings": {
+    "title": "Réservations",
+    "emptyTitle": "Aucune réservation pour le moment",
+    "emptyBody": "Les demandes et votre calendrier apparaîtront ici une fois votre candidature approuvée."
+  },
+  "earnings": {
+    "title": "Revenus",
+    "thisMonth": "Ce mois-ci",
+    "emptyTitle": "Aucun revenu pour le moment",
+    "emptyBody": "Les visites terminées et les versements seront listés ici."
+  }
+}

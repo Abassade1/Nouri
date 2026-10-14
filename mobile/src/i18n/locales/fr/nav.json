@@ -1,0 +1,15 @@
+{
+  "owner": {
+    "home": "Accueil",
+    "discover": "Découvrir",
+    "bookings": "Réservations",
+    "pets": "Animaux",
+    "account": "Compte"
+  },
+  "carer": {
+    "today": "Aujourd'hui",
+    "bookings": "Réservations",
+    "earnings": "Revenus",
+    "account": "Compte"
+  }
+}

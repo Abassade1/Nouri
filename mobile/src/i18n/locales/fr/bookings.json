@@ -1,0 +1,73 @@
+{
+  "list": {
+    "title": "Réservations",
+    "upcoming": "À venir",
+    "past": "Passées",
+    "requests": "Demandes",
+    "emptyTitle": "Aucune réservation pour le moment",
+    "emptyBody": "Vos soins à venir et passés apparaîtront ici.",
+    "carerEmptyBody": "Les demandes et votre calendrier apparaîtront ici une fois votre candidature approuvée.",
+    "noRequests": "Aucune nouvelle demande.",
+    "agenda": "À venir"
+  },
+  "status": {
+    "requested": "En attente de l'intervenant",
+    "accepted": "Acceptée",
+    "declined": "Refusée",
+    "payment_failed": "Paiement requis",
+    "confirmed": "Confirmée",
+    "in_progress": "En cours",
+    "completed": "Terminée",
+    "cancelled": "Annulée",
+    "disputed": "En examen"
+  },
+  "detail": {
+    "title": "Réservation",
+    "notFound": "Réservation introuvable.",
+    "when": "Quand",
+    "service": "Service",
+    "carer": "Intervenant",
+    "owner": "Propriétaire",
+    "pets": "Animaux",
+    "notes": "Notes",
+    "ownerNotes": "Notes du propriétaire",
+    "price": "Prix",
+    "subtotal": "Sous-total",
+    "total": "Total",
+    "commission": "Frais de la plateforme",
+    "payout": "Votre versement",
+    "nights": "Nuits : {{count}}",
+    "cancel": "Annuler la demande",
+    "cancelBooking": "Annuler la réservation",
+    "accept": "Accepter",
+    "decline": "Refuser",
+    "acceptedNote": "Votre intervenant a accepté. Le paiement et la confirmation ouvriront dans la prochaine version.",
+    "requestedNote": "En attente de la réponse de votre intervenant. Vous n'avez pas été facturé.",
+    "declinedNote": "Votre intervenant n'a pas pu accepter. Vous n'avez pas été facturé.",
+    "cancelledNote": "Cette réservation a été annulée.",
+    "carerAcceptedNote": "Vous avez accepté. Le propriétaire devra confirmer et payer.",
+    "actionError": "Cela n'a pas fonctionné. L'heure a peut-être été prise ou le statut a changé. Veuillez actualiser.",
+    "behaviour": "Comportement"
+  },
+  "availability": {
+    "title": "Disponibilités hebdomadaires",
+    "intro": "Les propriétaires ne peuvent demander que des heures comprises dans ces plages. Les heures sont celles de votre ville.",
+    "closed": "Fermé",
+    "add": "Ajouter des heures",
+    "from": "De",
+    "to": "À",
+    "hint": "Format 24 h, p. ex. 09:00",
+    "save": "Ajouter",
+    "cancel": "Annuler",
+    "remove": "Retirer",
+    "cardTitle": "Disponibilités hebdomadaires",
+    "cardBody": "Définissez les heures où les propriétaires peuvent vous réserver.",
+    "cardAction": "Modifier les heures",
+    "errors": {
+      "invalidTime": "Utilisez le format 24 h, p. ex. 09:00.",
+      "order": "La fin doit être après le début.",
+      "overlap": "Ces heures chevauchent une autre plage ce jour-là.",
+      "generic": "Impossible d'enregistrer. Veuillez réessayer."
+    }
+  }
+}

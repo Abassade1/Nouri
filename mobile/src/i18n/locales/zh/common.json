@@ -1,0 +1,20 @@
+{
+  "tagline": "为您爱的动物，提供周到的照护。",
+  "continue": "继续",
+  "cancel": "取消",
+  "retry": "重试",
+  "back": "返回",
+  "loading": "加载中…",
+  "or": "或",
+  "live": "已开通",
+  "comingSoon": "即将推出",
+  "notYetLive": "即将推出",
+  "optional": "选填",
+  "preview": {
+    "banner": "设计预览 · 示例数据",
+    "asOwner": "以宠物主人身份预览",
+    "asCarer": "以照护者身份预览",
+    "asAdmin": "以管理员身份预览",
+    "exit": "退出预览"
+  }
+}

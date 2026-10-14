@@ -1,0 +1,18 @@
+{
+  "title": "账户",
+  "language": "语言",
+  "languageHint": "更改应用的语言和阅读方向。",
+  "signedInAs": "当前登录",
+  "role": {
+    "owner": "宠物主人",
+    "carer": "宠物照护专业人士",
+    "admin": "管理员"
+  },
+  "privacy": "隐私与数据",
+  "signOut": "退出登录",
+  "restart": {
+    "title": "重启以生效",
+    "body": "{{appName}} 需要重启才能切换阅读方向。",
+    "confirm": "立即重启"
+  }
+}

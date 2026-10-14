@@ -1,0 +1,25 @@
+{
+  "home": {
+    "greeting": "Good to see you, {{name}}",
+    "greetingNoName": "Welcome",
+    "subtitle": "Care you can trust, arranged quietly.",
+    "citiesTitle": "Where we're caring",
+    "launchAreas": "Launching in",
+    "waitlistHint": "Not live in your city yet. Join the waitlist and we'll tell you first."
+  },
+  "discover": {
+    "title": "Discover",
+    "emptyTitle": "Vetted carers, by invitation",
+    "emptyBody": "Browse credentialed professionals in your city. This arrives in an upcoming release."
+  },
+  "bookings": {
+    "title": "Bookings",
+    "emptyTitle": "No bookings yet",
+    "emptyBody": "Your upcoming and past care will appear here."
+  },
+  "pets": {
+    "title": "Your pets",
+    "emptyTitle": "Every pet, one profile",
+    "emptyBody": "Health, routine and wellbeing for each of your animals will live here."
+  }
+}

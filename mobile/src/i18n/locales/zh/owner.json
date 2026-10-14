@@ -1,0 +1,25 @@
+{
+  "home": {
+    "greeting": "很高兴见到您，{{name}}",
+    "greetingNoName": "欢迎",
+    "subtitle": "值得信赖的照护，安静而妥帖。",
+    "citiesTitle": "我们服务的城市",
+    "launchAreas": "首发区域",
+    "waitlistHint": "您所在的城市尚未开通。加入候补名单，我们将第一时间通知您。"
+  },
+  "discover": {
+    "title": "发现",
+    "emptyTitle": "精选照护者，凭邀请加入",
+    "emptyBody": "浏览您所在城市的认证专业人士。此功能将在后续版本推出。"
+  },
+  "bookings": {
+    "title": "预约",
+    "emptyTitle": "暂无预约",
+    "emptyBody": "您即将到来和过往的照护将显示在这里。"
+  },
+  "pets": {
+    "title": "我的宠物",
+    "emptyTitle": "每只宠物，一份档案",
+    "emptyBody": "您每只宠物的健康、日常习惯和身心状态都将记录在这里。"
+  }
+}

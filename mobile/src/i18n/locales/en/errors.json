@@ -1,0 +1,12 @@
+{
+  "generic": "Something went wrong. Please try again.",
+  "network": "We couldn't reach the server. Check your connection.",
+  "invalidCredentials": "That email and password don't match.",
+  "emailTaken": "An account with this email already exists.",
+  "weakPassword": "Please choose a password with at least 8 characters.",
+  "invalidEmail": "Enter a valid email address.",
+  "required": "This field is required.",
+  "consentRequired": "Please accept to continue.",
+  "notConfigured": "The app isn't connected to a backend yet. Add your Supabase keys to .env (see README).",
+  "socialCancelled": "Sign-in was cancelled."
+}
