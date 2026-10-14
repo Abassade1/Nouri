@@ -1,3 +1,4 @@
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as Updates from 'expo-updates';
 import { DevSettings, I18nManager, Platform } from 'react-native';
 
@@ -28,6 +29,28 @@ export function applyDirection(language: string): { restartRequired: boolean } {
     return { restartRequired: true };
   }
   return { restartRequired: false };
+}
+
+const RESTART_KEY = 'app.directionRestart';
+
+/**
+ * Whether to restart for a direction change. A restart is attempted only once per
+ * target direction: if the direction still hasn't flipped afterwards (a development
+ * reload only reloads JavaScript, not the native setting), we carry on rather than
+ * reloading forever. The new direction then applies on the next full launch.
+ */
+export async function shouldRestartForDirection(language: string): Promise<boolean> {
+  const target = isRtlLanguage(language) ? 'rtl' : 'ltr';
+  try {
+    if ((await AsyncStorage.getItem(RESTART_KEY)) === target) {
+      await AsyncStorage.removeItem(RESTART_KEY);
+      return false;
+    }
+    await AsyncStorage.setItem(RESTART_KEY, target);
+    return true;
+  } catch {
+    return false; // can't remember attempts: never risk a loop
+  }
 }
 
 /** Restart the JS bundle so the new direction is picked up. */

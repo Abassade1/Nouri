@@ -69,5 +69,6 @@
       "overlap": "这些时段与当天的另一时段重叠。",
       "generic": "无法保存，请重试。"
     }
-  }
+  },
+  "priority": "Nouri Plus · 优先"
 }

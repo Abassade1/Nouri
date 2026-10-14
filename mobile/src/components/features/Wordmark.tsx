@@ -1,22 +1,34 @@
 import { StyleSheet, View } from 'react-native';
 
 import { APP_NAME } from '@/config/app';
-import { colors, space } from '@/theme/tokens';
+import { colors, radius, space } from '@/theme/tokens';
 
-import { Text } from '../ui';
+import { Icon, Text } from '../ui';
 
-/** The working brand mark: spaced capitals over a hairline. Replace with the final logo later. */
-export function Wordmark() {
+/**
+ * The working brand mark: a leaf-green tile with a heart, beside the name.
+ * `light` is for the deep-forest hero. Replace with the final logo later.
+ */
+export function Wordmark({ light = false }: { light?: boolean }) {
   return (
     <View style={styles.wrap} accessibilityRole="header">
-      <Text style={styles.text}>{APP_NAME}</Text>
-      <View style={styles.rule} />
+      <View style={styles.tile}>
+        <Icon name="heart" size={16} color="onAccent" />
+      </View>
+      <Text style={[styles.text, { color: light ? colors.onAccent : colors.accent }]}>{APP_NAME}</Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  wrap: { gap: space.sm, alignItems: 'flex-start' },
-  text: { fontSize: 15, letterSpacing: 5, textTransform: 'uppercase', color: colors.accent },
-  rule: { width: 28, height: 1, backgroundColor: colors.accent },
+  wrap: { flexDirection: 'row', alignItems: 'center', gap: space.sm + 2 },
+  tile: {
+    width: 34,
+    height: 34,
+    borderRadius: radius.sm,
+    backgroundColor: colors.highlight,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  text: { fontSize: 15, letterSpacing: 4, textTransform: 'uppercase' },
 });

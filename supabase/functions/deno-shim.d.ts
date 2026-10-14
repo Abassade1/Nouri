@@ -12,3 +12,7 @@ declare module 'npm:stripe@23' {
 declare module 'npm:@supabase/supabase-js@2' {
   export * from '@supabase/supabase-js';
 }
+declare module 'npm:@anthropic-ai/sdk@0.133' {
+  import Anthropic from '@anthropic-ai/sdk';
+  export default Anthropic;
+}

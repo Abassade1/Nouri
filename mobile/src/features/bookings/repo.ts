@@ -20,7 +20,7 @@ function db() {
 }
 
 const SELECT = `id, status, start_at, end_at, quantity, notes, currency, subtotal_cents, tax_cents, tax_breakdown, total_cents,
-  commission_cents, carer_payout_cents, owner_id, carer_id, completed_at, paid_at, transferred_at, refunded_cents,
+  commission_cents, carer_payout_cents, owner_id, carer_id, completed_at, paid_at, transferred_at, refunded_cents, is_priority,
   services(name_i18n, rate_unit), cities(timezone, cancellation_full_refund_hours, cancellation_late_refund_pct, payout_hold_hours), booking_pets(pets(id, name, species, breed, behaviour_notes))`;
 
 async function hydrate(rows: any[]): Promise<BookingItem[]> {

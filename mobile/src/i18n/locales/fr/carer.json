@@ -33,5 +33,28 @@
     "thisMonth": "Ce mois-ci",
     "emptyTitle": "Aucun revenu pour le moment",
     "emptyBody": "Les visites terminées et les versements seront listés ici."
+  },
+  "photos": {
+    "cardTitle": "Vos photos",
+    "cardBody": "Montrez aux propriétaires vos promenades, vos visites et le soin que vous apportez.",
+    "open": "Gérer les photos",
+    "title": "Vos photos",
+    "subtitle": "Les propriétaires les voient sur votre profil. La première devient votre photo de couverture.",
+    "add": "Ajouter des photos",
+    "count": "{{count}} sur {{max}} photos",
+    "cover": "Couverture",
+    "tagLabel": "Que montre-t-elle ?",
+    "general": "Général",
+    "caption": "Légende (facultatif)",
+    "captionPlaceholder": "ex. Promenade du matin au bord de la rivière",
+    "save": "Enregistrer",
+    "remove": "Supprimer la photo",
+    "removeTitle": "Supprimer cette photo ?",
+    "removeBody": "Les propriétaires ne la verront plus sur votre profil.",
+    "cancel": "Annuler",
+    "limit": "Vous avez {{max}} photos. Supprimez-en une pour en ajouter une autre.",
+    "emptyTitle": "Aucune photo pour l'instant",
+    "emptyBody": "Des photos de vos promenades et visites aident les propriétaires à vous choisir en confiance.",
+    "error": "Un problème est survenu avec cette photo. Veuillez réessayer."
   }
 }

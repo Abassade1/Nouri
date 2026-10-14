@@ -1,33 +1,14 @@
 import { PREVIEW_MODE } from '@/config/app';
+import { callFunction, FunctionError } from '@/lib/functions';
 import { refundCents, refundPercent } from '@/lib/refunds';
 import { supabase } from '@/lib/supabase';
 
 import { previewBookings } from '../bookings/previewStore';
 
-export class PaymentsError extends Error {
-  constructor(public code: string) {
-    super(code);
-  }
-}
+export { FunctionError as PaymentsError } from '@/lib/functions';
 
 const preview = PREVIEW_MODE && !supabase;
-
-/** Calls one of our server functions as the signed-in user and returns its JSON (or a PaymentsError with the code). */
-async function call<T>(name: string, body: Record<string, unknown>): Promise<T> {
-  if (!supabase) throw new PaymentsError('not_configured');
-  const { data, error } = await supabase.functions.invoke(name, { body });
-  if (error) {
-    let code = 'server_error';
-    try {
-      const payload = await (error as { context?: Response }).context?.json();
-      if (payload?.error) code = payload.error;
-    } catch {
-      // network failure or non-JSON body
-    }
-    throw new PaymentsError(code);
-  }
-  return data as T;
-}
+const call = callFunction;
 
 // ---- preview-mode stand-ins (no Stripe, no backend) ---------------------------------------------
 export const previewPayout = { started: false, ready: false };
@@ -76,7 +57,7 @@ export function previewPay(bookingId: string) {
 export async function cancelBooking(bookingId: string, actor: 'owner' | 'carer'): Promise<{ refunded_cents: number; refund_percent: number }> {
   if (preview) {
     const b = previewBookings.get(bookingId);
-    if (!b) throw new PaymentsError('booking_not_found');
+    if (!b) throw new FunctionError('booking_not_found');
     const pct = b.paid_at ? refundPercent({ actor, startAt: new Date(b.start_at), now: new Date(), policy: b.policy }) : 0;
     const cents = b.paid_at ? refundCents(b.total_cents, pct) : 0;
     previewBookings.setStatus(bookingId, 'cancelled', { refunded_cents: cents });

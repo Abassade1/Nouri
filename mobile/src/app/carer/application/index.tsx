@@ -8,7 +8,7 @@ import { Button, Card, Icon, Reveal, Screen, Text } from '@/components/ui';
 import { applicationRepo } from '@/features/carer/repo';
 import { applicationErrorKey, computeProgress, isComplete, type SectionKey } from '@/features/carer/progress';
 import { useApplication } from '@/features/carer/useApplication';
-import { colors, radius, space } from '@/theme/tokens';
+import { colors, radius, shadow, space } from '@/theme/tokens';
 
 const SECTIONS: { key: SectionKey; href: Href; icon: 'user' | 'tag' | 'award' | 'users' | 'shield' }[] = [
   { key: 'profile', href: '/carer/application/profile', icon: 'user' },
@@ -110,10 +110,10 @@ export default function ApplicationHub() {
 
 const styles = StyleSheet.create({
   list: { marginTop: space.xl, gap: space.md },
-  rejected: { borderColor: colors.danger },
+  rejected: { borderWidth: 1.5, borderColor: colors.danger },
   row: {
     flexDirection: 'row', alignItems: 'center', gap: space.md, padding: space.lg,
-    backgroundColor: colors.surface, borderRadius: radius.lg, borderWidth: 1, borderColor: colors.line,
+    backgroundColor: colors.surface, borderRadius: radius.lg, ...shadow.card,
   },
   rowText: { flex: 1, gap: 2 },
   icon: { width: 36, height: 36, borderRadius: radius.pill, backgroundColor: colors.accentSoft, alignItems: 'center', justifyContent: 'center' },

@@ -151,9 +151,11 @@ const fr: Messages = {
       impact: "Utilisé par {carers} intervenants dans {cities} villes, avec {bookings} réservations en cours.",
       enableHint: "Pour offrir ce service quelque part, activez-le dans les paramètres de la ville.", goCities: "Aller aux villes",
       save: "Enregistrer les modifications", saved: "Enregistré.", history: "Modifications récentes", noHistory: "Aucune modification enregistrée.",
+      image: "Image de couverture", imageHelp: "Affichée aux propriétaires sur les cartes de service dans l'application. Utilisez une photo JPEG, PNG ou WebP au format paysage, jusqu'à 5 Mo. Sans image, l'application affiche sa photo intégrée.", noImage: "Pas encore d'image : l'application affiche sa photo intégrée.", upload: "Téléverser", removeImage: "Supprimer l'image",
     },
   },
   errors: {
+    image_invalid: "Choisissez une image JPEG, PNG ou WebP d'au plus 5 Mo.",
     description_required: "Veuillez rédiger une description en anglais.",
     text_too_long: "Les noms peuvent compter jusqu'à 80 caractères et les descriptions jusqu'à 300.",
     invalid_unit: "Choisissez le mode de facturation du service.",

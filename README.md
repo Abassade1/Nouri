@@ -107,6 +107,28 @@ The money rules and webhook handling are unit-tested, but nothing has run agains
 3. A **confirmed (paid) booking can only be cancelled through the server**, which applies the city's refund rule: owner cancels at least 24 h ahead → full refund; later → 50% (both numbers are per-city settings); a carer cancelling always means a full refund. The app shows the exact refund *before* the owner confirms.
 4. Carers **can't be booked or accept requests until their payout account is active**, and don't appear in Discover until then.
 
+## Ask Nouri and Nouri Plus setup
+
+**Ask Nouri** is a pet-care chat for owners. The `ask-nouri` function sends the owner's question, their recent conversation and their pets' profiles (species, breed, age, notes, allergies, current medication names) to Claude (`claude-opus-5-5`) and stores the answer. It is told never to diagnose or give doses, and to send emergencies straight to a vet. Free owners get **5 questions a day** (set in migration `0014`); Nouri Plus members are unlimited. In preview mode the chat shows a fixed sample answer and no AI is called.
+
+**Nouri Plus** is a Stripe subscription. Members get unlimited Ask Nouri, and their booking requests are marked *priority* for carers.
+
+1. **Anthropic API key** (from console.anthropic.com). Each question is billed to your Anthropic account by the tokens it uses; the fixed instructions are cached to keep repeat costs down.
+2. **A Plus price in Stripe**: create a product "Nouri Plus" with a recurring price (for example CAD 14.99 / month) and copy its price id (`price_...`). Turn on the **customer portal** (Stripe → Settings → Billing → Customer portal) so members can update cards and cancel.
+3. **Secrets**:
+   ```bash
+   supabase secrets set ANTHROPIC_API_KEY=sk-ant-... STRIPE_PLUS_PRICE_ID=price_... PLUS_RETURN_URL=https://YOUR-ADMIN-DOMAIN/plus-return
+   ```
+4. **Deploy**:
+   ```bash
+   supabase functions deploy ask-nouri nouri-plus stripe-webhook
+   ```
+   (`stripe-webhook` still needs `--no-verify-jwt`, as above.)
+5. **Webhook events**: add `customer.subscription.created`, `customer.subscription.updated` and `customer.subscription.deleted` to the *Your account* webhook endpoint.
+6. **Test**: subscribe from *Account → Nouri Plus* with card `4242 4242 4242 4242`, check the membership shows as active and the question counter says *Unlimited*, then cancel from *Manage membership*.
+
+**App Store note:** Apple requires its own in-app purchase for subscriptions that unlock digital features inside an iOS app, and unlimited Ask Nouri is one. Priority booking is part of a real-world service, which may use Stripe. Before submitting to the App Store, decide whether to sell Plus through Apple in-app purchase on iOS, or keep Stripe and limit what Plus unlocks there. Google Play has a similar rule.
+
 ## Phone builds (EAS)
 
 The app is a native iOS and Android app. Expo's build service (EAS) compiles it, signs it, sends it to the stores and delivers small fixes over the air. Settings live in `mobile/eas.json`.
@@ -163,7 +185,7 @@ edited by the client, visit reports can't be changed after submission.
 
 ## Key decisions (plain language)
 
-- **Light, warm, restrained look** with one accent colour (forest green). All colours/spacing/type live in `mobile/src/theme/tokens.ts`; screens never hard-code them. (A reference you shared used a dark luxury look; this is easy to switch by changing the tokens.)
+- **Modern, premium look**: deep forest green (`#0D3D2E`) with a leaf-green highlight (`#268702`) on soft neutrals, pill buttons, large rounded cards with soft shadows, a curved deep-green hero (`HeroHeader`), and Poppins type (IBM Plex Sans Arabic for Arabic). All colours/spacing/type live in `mobile/src/theme/tokens.ts`; screens never hard-code them.
 - **Screens can't see data they shouldn't, even if the app has a bug.** Privacy is enforced inside the database (Row Level Security), not just in the app. Example: a carer sees a pet's name and routine when a request arrives, but health notes and medications only once the booking is confirmed (and for 7 days after).
 - **Prices are calculated by the database**, never the phone: carer rate x quantity, plus the city's taxes, minus the city's commission. A tampered app can't change what's charged.
 - **City = configuration.** Currency, taxes (itemised, e.g. GST + PST), commission, default language, launch neighbourhoods and which services are offered are rows in `cities` / `city_services`. Adding Edmonton or Dubai is data entry, not code. A city that isn't `is_active` can't take bookings and feeds the waitlist.

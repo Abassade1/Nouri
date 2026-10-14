@@ -1,13 +1,13 @@
 import { Image } from 'expo-image';
 import { StyleSheet, View } from 'react-native';
 
-import { avatarUrl } from '@/features/marketplace/avatar';
+import { publicUrl } from '@/features/media/repo';
 import { colors } from '@/theme/tokens';
 
 import { Text } from '../ui';
 
 export function CarerAvatar({ name, path, size = 56 }: { name: string | null; path: string | null; size?: number }) {
-  const url = avatarUrl(path);
+  const url = publicUrl('avatars', path);
   return (
     <View style={[styles.box, { width: size, height: size, borderRadius: size / 2 }]}>
       {url ? (

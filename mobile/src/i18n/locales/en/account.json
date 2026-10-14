@@ -14,5 +14,11 @@
     "title": "Restart to apply",
     "body": "{{appName}} needs to restart to switch the reading direction.",
     "confirm": "Restart now"
+  },
+  "photo": {
+    "add": "Add a profile photo",
+    "change": "Change photo",
+    "hint": "A clear, friendly photo helps owners and carers recognise you.",
+    "error": "We couldn't update your photo. Please try again."
   }
 }

@@ -12,6 +12,12 @@
   "species": {
     "dog": "Chien",
     "cat": "Chat",
+    "horse": "Cheval",
+    "bird": "Oiseau",
+    "rabbit": "Lapin",
+    "small_mammal": "Petit mammifère",
+    "reptile": "Reptile",
+    "fish": "Poisson",
     "other": "Autre"
   },
   "sex": {

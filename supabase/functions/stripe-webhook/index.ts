@@ -1,4 +1,4 @@
-// Receives Stripe events (payments, refunds, carer accounts, bank payouts).
+// Receives Stripe events (payments, refunds, carer accounts, bank payouts, Nouri Plus memberships).
 // Create TWO endpoints in the Stripe dashboard pointing here:
 //   1) "Your account" events         -> secret in STRIPE_WEBHOOK_SECRET
 //   2) "Connected accounts" events   -> secret in STRIPE_CONNECT_WEBHOOK_SECRET
@@ -40,6 +40,14 @@ function dbPort(): WebhookDb {
     },
     async upsertPayout(row) {
       const { error } = await svc.from('payouts').upsert(row, { onConflict: 'stripe_payout_id' });
+      if (error) throw error;
+    },
+    async userIdByCustomer(customerId) {
+      const { data } = await svc.from('stripe_customers').select('user_id').eq('customer_id', customerId).maybeSingle();
+      return data?.user_id ?? null;
+    },
+    async upsertSubscription(row) {
+      const { error } = await svc.from('subscriptions').upsert({ ...row, updated_at: new Date().toISOString() }, { onConflict: 'user_id' });
       if (error) throw error;
     },
   };

@@ -5,7 +5,7 @@ import { handleStripeEvent, type BookingRow, type StripeEventLike, type WebhookD
 
 function fakeDb(booking: BookingRow | null = { id: 'b1', status: 'accepted', total_cents: 3675, currency: 'CAD', stripe_payment_intent_id: 'pi_1' }) {
   const seen = new Set<string>();
-  const log = { updates: [] as { id: string; from: string[] | null; patch: any }[], payoutsEnabled: [] as [string, boolean][], payouts: [] as any[] };
+  const log = { updates: [] as { id: string; from: string[] | null; patch: any }[], payoutsEnabled: [] as [string, boolean][], payouts: [] as any[], subs: [] as any[] };
   const db: WebhookDb = {
     async recordEvent(id) { if (seen.has(id)) return false; seen.add(id); return true; },
     async getBooking() { return booking; },
@@ -14,6 +14,8 @@ function fakeDb(booking: BookingRow | null = { id: 'b1', status: 'accepted', tot
     async setPayoutsEnabled(acct, enabled) { log.payoutsEnabled.push([acct, enabled]); },
     async carerIdByAccount(acct) { return acct === 'acct_known' ? 'carer-1' : null; },
     async upsertPayout(row) { log.payouts.push(row); },
+    async userIdByCustomer(c) { return c === 'cus_known' ? 'owner-1' : null; },
+    async upsertSubscription(row) { log.subs.push(row); },
   };
   return { db, log };
 }
@@ -94,4 +96,37 @@ test('bank payouts on a carer account are recorded, others ignored', async () =>
 
 test('unrelated event types are ignored', async () => {
   assert.equal(await handleStripeEvent({ id: 'e11', type: 'customer.created', data: { object: {} } }, fakeDb().db), 'ignored');
+});
+
+const subEvent = (type: string, over: Record<string, any> = {}): StripeEventLike => ({
+  id: `evt_${type}`, type,
+  data: { object: { id: 'sub_1', status: 'active', customer: 'cus_known', cancel_at_period_end: false, items: { data: [{ current_period_end: 1793836800 }] }, ...over } },
+});
+
+test('a new Nouri Plus subscription is recorded for the member, with its period end', async () => {
+  const { db, log } = fakeDb();
+  assert.equal(await handleStripeEvent(subEvent('customer.subscription.created', { metadata: { user_id: 'owner-2' } }), db), 'subscription_updated');
+  assert.equal(log.subs[0].user_id, 'owner-2');
+  assert.equal(log.subs[0].status, 'active');
+  assert.equal(log.subs[0].current_period_end, new Date(1793836800 * 1000).toISOString());
+});
+
+test('without metadata the member is found from the Stripe customer; unknown customers are ignored', async () => {
+  const { db, log } = fakeDb();
+  assert.equal(await handleStripeEvent(subEvent('customer.subscription.updated', { cancel_at_period_end: true }), db), 'subscription_updated');
+  assert.equal(log.subs[0].user_id, 'owner-1');
+  assert.equal(log.subs[0].cancel_at_period_end, true);
+  assert.equal(await handleStripeEvent(subEvent('customer.subscription.updated', { id: 'sub_2', customer: 'cus_other' }), { ...db, recordEvent: async () => true }), 'ignored');
+});
+
+test('a deleted subscription ends membership', async () => {
+  const { db, log } = fakeDb();
+  await handleStripeEvent(subEvent('customer.subscription.deleted', { status: 'active' }), db);
+  assert.equal(log.subs[0].status, 'canceled');
+});
+
+test('subscription events on carer accounts are ignored', async () => {
+  const { db, log } = fakeDb();
+  assert.equal(await handleStripeEvent({ ...subEvent('customer.subscription.created'), account: 'acct_known' }, db), 'ignored');
+  assert.equal(log.subs.length, 0);
 });

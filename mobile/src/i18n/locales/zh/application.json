@@ -43,7 +43,9 @@
     "postalCode": "住所邮政编码",
     "postalHint": "用于匹配附近的宠物主人。主人只会看到前半部分。",
     "save": "保存",
-    "saving": "保存中…"
+    "saving": "保存中…",
+    "species": "我照护的动物",
+    "speciesRequired": "请至少选择一种动物。"
   },
   "specialties": {
     "senior_care": "老年宠物",

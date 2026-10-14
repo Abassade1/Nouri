@@ -18,6 +18,7 @@ export default function CarerTabs() {
       <Tabs.Screen name="application" options={{ href: null }} />
       <Tabs.Screen name="availability" options={{ href: null }} />
       <Tabs.Screen name="reviews" options={{ href: null }} />
+      <Tabs.Screen name="photos" options={{ href: null }} />
     </Tabs>
   );
 }

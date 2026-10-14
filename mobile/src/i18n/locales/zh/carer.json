@@ -33,5 +33,28 @@
     "thisMonth": "本月",
     "emptyTitle": "暂无收入",
     "emptyBody": "已完成的服务和付款将列在这里。"
+  },
+  "photos": {
+    "cardTitle": "您的照片",
+    "cardBody": "向宠物主人展示您的遛狗、上门探访和照护细节。",
+    "open": "管理照片",
+    "title": "您的照片",
+    "subtitle": "宠物主人会在您的主页看到这些照片。第一张将作为封面。",
+    "add": "添加照片",
+    "count": "{{count}}/{{max}} 张照片",
+    "cover": "封面",
+    "tagLabel": "这张照片展示的是？",
+    "general": "通用",
+    "caption": "说明（可选）",
+    "captionPlaceholder": "例如：河边的晨间散步",
+    "save": "保存",
+    "remove": "删除照片",
+    "removeTitle": "删除这张照片？",
+    "removeBody": "宠物主人将不再在您的主页看到它。",
+    "cancel": "取消",
+    "limit": "您已有 {{max}} 张照片。删除一张后才能继续添加。",
+    "emptyTitle": "还没有照片",
+    "emptyBody": "遛狗和探访的照片能让宠物主人更放心地选择您。",
+    "error": "这张照片出了点问题，请重试。"
   }
 }

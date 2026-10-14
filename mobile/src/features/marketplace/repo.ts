@@ -3,6 +3,8 @@ import { estimatePrice } from '@/lib/pricing';
 import { supabase } from '@/lib/supabase';
 
 import { previewBookings } from '../bookings/previewStore';
+import { mediaRepo } from '../media/repo';
+import type { CarerPhoto } from '../media/repo';
 import type {
   AvailabilityWindow, Badge, CarerDetail, CarerListing, CityInfo, NewBooking, Review, ServiceInfo,
 } from './types';
@@ -30,7 +32,7 @@ const supabaseRepo: MarketplaceRepo = {
   async listServices(cityId) {
     const { data, error } = await db()
       .from('city_services')
-      .select('services(id, slug, name_i18n, rate_unit, sort_order, is_active)')
+      .select('services(id, slug, name_i18n, rate_unit, sort_order, is_active, image_path)')
       .eq('city_id', cityId)
       .eq('is_enabled', true);
     if (error) throw error;
@@ -38,7 +40,7 @@ const supabaseRepo: MarketplaceRepo = {
       .map((r: any) => r.services)
       .filter((s: any) => s?.is_active)
       .sort((a: any, b: any) => a.sort_order - b.sort_order)
-      .map((s: any) => ({ id: s.id, slug: s.slug, name_i18n: s.name_i18n, rate_unit: s.rate_unit }));
+      .map((s: any) => ({ id: s.id, slug: s.slug, name_i18n: s.name_i18n, rate_unit: s.rate_unit, image_path: s.image_path }));
   },
 
   async searchCarers(cityId) {
@@ -60,19 +62,21 @@ const supabaseRepo: MarketplaceRepo = {
 
   async getCarer(carerId) {
     const c = db();
-    const [listing, badges, reviews, windows] = await Promise.all([
+    const [listing, badges, reviews, windows, photos] = await Promise.all([
       c.from('carer_directory').select('*').eq('user_id', carerId).maybeSingle(),
       c.from('carer_credential_badges').select('type, title, issuer, expires_on').eq('carer_id', carerId),
       c.from('public_reviews').select('id, rating, comment, created_at, reviewer_first_name').eq('carer_id', carerId).order('created_at', { ascending: false }).limit(20),
       c.from('availability').select('id, weekday, start_time, end_time').eq('carer_id', carerId).order('weekday').order('start_time'),
+      c.from('carer_photos').select('id, carer_id, path, service_id, caption, sort_order').eq('carer_id', carerId).order('sort_order').order('created_at'),
     ]);
-    for (const r of [listing, badges, reviews, windows]) if (r.error) throw r.error;
+    for (const r of [listing, badges, reviews, windows, photos]) if (r.error) throw r.error;
     if (!listing.data) return null;
     return {
       listing: listing.data as CarerListing,
       badges: (badges.data ?? []) as Badge[],
       reviews: (reviews.data ?? []) as Review[],
       availability: (windows.data ?? []) as AvailabilityWindow[],
+      photos: (photos.data ?? []) as CarerPhoto[],
     };
   },
 
@@ -116,13 +120,13 @@ const previewServices: ServiceInfo[] = [
 const win = (weekday: number, a: string, b: string, i: number): AvailabilityWindow => ({ id: `w${weekday}${i}`, weekday, start_time: a, end_time: b });
 const weekdays = (a: string, b: string, days = [1, 2, 3, 4, 5]) => days.map((d, i) => win(d, a, b, i));
 
-const carers: CarerDetail[] = [
+const carers: Omit<CarerDetail, 'photos'>[] = [
   {
     listing: {
       user_id: 'cr-1', city_id: 'c-calgary', display_name: 'Casey Morgan, RVT', headline: 'Registered vet tech specialising in senior dogs',
       bio: 'Eight years in small-animal clinics. Calm, methodical, and comfortable with medication schedules and post-surgical care. I send a short, honest report after every visit.',
       years_experience: 8, languages_spoken: ['en', 'fr'], specialties: ['senior_care', 'medication'], postal_area: 'T3H',
-      rating_avg: 4.9, rating_count: 27, avatar_path: null, verified_badges: ['vet_tech', 'first_aid', 'background_check'],
+      rating_avg: 4.9, rating_count: 27, avatar_path: null, verified_badges: ['vet_tech', 'first_aid', 'background_check'], species_served: ['dog', 'cat', 'horse', 'rabbit'],
       services: [{ service_id: 's4', rate_cents: 4500 }, { service_id: 's2', rate_cents: 3000 }, { service_id: 's5', rate_cents: 4000 }],
     },
     badges: [
@@ -142,7 +146,7 @@ const carers: CarerDetail[] = [
       user_id: 'cr-2', city_id: 'c-calgary', display_name: 'Priya Singh', headline: 'Certified trainer for anxious and reactive dogs',
       bio: 'Force-free trainer. Walks are structured, quiet and tailored. Fluent in Punjabi and English.',
       years_experience: 5, languages_spoken: ['en', 'pa'], specialties: ['anxious_pets', 'puppies'], postal_area: 'T3Z',
-      rating_avg: 4.7, rating_count: 14, avatar_path: null, verified_badges: ['trainer_cert', 'first_aid'],
+      rating_avg: 4.7, rating_count: 14, avatar_path: null, verified_badges: ['trainer_cert', 'first_aid'], species_served: ['dog'],
       services: [{ service_id: 's1', rate_cents: 3500 }, { service_id: 's2', rate_cents: 2800 }],
     },
     badges: [
@@ -157,7 +161,7 @@ const carers: CarerDetail[] = [
       user_id: 'cr-3', city_id: 'c-calgary', display_name: 'Amal Haddad', headline: 'Overnight sitting for cats and small dogs',
       bio: 'Former clinic receptionist who now sits full-time. Quiet home, no other pets, flexible with arrivals.',
       years_experience: 3, languages_spoken: ['en', 'ar'], specialties: ['senior_care'], postal_area: 'T3H',
-      rating_avg: 0, rating_count: 0, avatar_path: null, verified_badges: ['first_aid', 'background_check'],
+      rating_avg: 0, rating_count: 0, avatar_path: null, verified_badges: ['first_aid', 'background_check'], species_served: ['cat', 'bird', 'small_mammal', 'reptile', 'fish'],
       services: [{ service_id: 's3', rate_cents: 9500 }, { service_id: 's2', rate_cents: 2500 }],
     },
     badges: [
@@ -175,7 +179,10 @@ const previewRepo: MarketplaceRepo = {
   async searchCarers() {
     return { carers: carers.map((c) => c.listing), availability: Object.fromEntries(carers.map((c) => [c.listing.user_id, c.availability])) };
   },
-  async getCarer(id) { return carers.find((c) => c.listing.user_id === id) ?? null; },
+  async getCarer(id) {
+    const c = carers.find((x) => x.listing.user_id === id);
+    return c ? { ...c, photos: await mediaRepo.listCarerPhotos(id) } : null;
+  },
   async createBooking(ownerId, input) {
     const carer = carers.find((c) => c.listing.user_id === input.carerId)!;
     const service = previewServices.find((s) => s.id === input.serviceId)!;

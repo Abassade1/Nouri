@@ -33,5 +33,28 @@
     "thisMonth": "This month",
     "emptyTitle": "No earnings yet",
     "emptyBody": "Completed visits and payouts will be listed here."
+  },
+  "photos": {
+    "cardTitle": "Your photos",
+    "cardBody": "Show owners your walks, visits and the care you give.",
+    "open": "Manage photos",
+    "title": "Your photos",
+    "subtitle": "Owners see these on your profile. The first one becomes your cover photo.",
+    "add": "Add photos",
+    "count": "{{count}} of {{max}} photos",
+    "cover": "Cover",
+    "tagLabel": "What does it show?",
+    "general": "General",
+    "caption": "Caption (optional)",
+    "captionPlaceholder": "e.g. Morning loop by the river",
+    "save": "Save",
+    "remove": "Remove photo",
+    "removeTitle": "Remove this photo?",
+    "removeBody": "Owners will no longer see it on your profile.",
+    "cancel": "Cancel",
+    "limit": "You have {{max}} photos. Remove one to add another.",
+    "emptyTitle": "No photos yet",
+    "emptyBody": "Photos of your walks and visits help owners choose you with confidence.",
+    "error": "Something went wrong with that photo. Please try again."
   }
 }

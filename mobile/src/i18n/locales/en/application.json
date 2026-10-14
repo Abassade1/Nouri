@@ -43,7 +43,9 @@
     "postalCode": "Home postal code",
     "postalHint": "Used to match you with nearby owners. Owners only ever see the first part.",
     "save": "Save",
-    "saving": "Saving…"
+    "saving": "Saving…",
+    "species": "Animals I care for",
+    "speciesRequired": "Choose at least one kind of animal."
   },
   "specialties": {
     "senior_care": "Senior pets",

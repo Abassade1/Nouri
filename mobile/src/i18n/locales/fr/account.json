@@ -14,5 +14,11 @@
     "title": "Redémarrer pour appliquer",
     "body": "{{appName}} doit redémarrer pour changer le sens de lecture.",
     "confirm": "Redémarrer maintenant"
+  },
+  "photo": {
+    "add": "Ajouter une photo de profil",
+    "change": "Changer la photo",
+    "hint": "Une photo claire et souriante aide les propriétaires et les intervenants à vous reconnaître.",
+    "error": "Impossible de mettre à jour votre photo. Veuillez réessayer."
   }
 }

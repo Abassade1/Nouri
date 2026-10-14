@@ -38,6 +38,8 @@ export type BookingItem = {
   paid_at: string | null;
   transferred_at: string | null;
   refunded_cents: number;
+  /** Requested by a Nouri Plus member: shown to carers as priority. */
+  is_priority?: boolean;
   policy: MoneyPolicy;
   pets: BookingPet[];
 };

@@ -17,6 +17,8 @@ export default function OwnerTabs() {
       <Tabs.Screen name="pets" options={{ title: t('owner.pets'), tabBarIcon: ({ color }) => <TabIcon name="heart" color={color} /> }} />
       <Tabs.Screen name="account" options={{ title: t('owner.account'), tabBarIcon: ({ color }) => <TabIcon name="user" color={color} /> }} />
       <Tabs.Screen name="concern/[id]" options={{ href: null }} />
+      <Tabs.Screen name="assistant" options={{ href: null, tabBarStyle: { display: 'none' } }} />
+      <Tabs.Screen name="plus" options={{ href: null }} />
     </Tabs>
   );
 }

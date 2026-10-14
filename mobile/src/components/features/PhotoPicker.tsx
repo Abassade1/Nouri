@@ -46,5 +46,5 @@ export function PhotoPicker({ photos, onChange }: { photos: PickedImage[]; onCha
 const styles = StyleSheet.create({
   grid: { flexDirection: 'row', flexWrap: 'wrap', gap: space.sm },
   thumb: { width: 96, height: 96, borderRadius: radius.md, overflow: 'hidden', backgroundColor: colors.sunken },
-  remove: { position: 'absolute', top: 4, end: 4, width: 24, height: 24, borderRadius: 12, backgroundColor: 'rgba(29,28,25,0.7)', alignItems: 'center', justifyContent: 'center' },
+  remove: { position: 'absolute', top: 4, end: 4, width: 24, height: 24, borderRadius: 12, backgroundColor: colors.overlay, alignItems: 'center', justifyContent: 'center' },
 });

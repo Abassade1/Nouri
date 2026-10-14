@@ -9,7 +9,7 @@ export function EmptyState({ icon, title, body }: { icon: IconName; title: strin
   return (
     <View style={styles.wrap}>
       <View style={styles.badge}>
-        <Icon name={icon} size={22} color="accent" />
+        <Icon name={icon} size={28} color="highlight" />
       </View>
       <Text variant="heading" align="center">
         {title}
@@ -24,10 +24,10 @@ export function EmptyState({ icon, title, body }: { icon: IconName; title: strin
 const styles = StyleSheet.create({
   wrap: { alignItems: 'center', paddingVertical: space.xxxl, gap: space.md },
   badge: {
-    width: 56,
-    height: 56,
-    borderRadius: radius.pill,
-    backgroundColor: colors.accentSoft,
+    width: 72,
+    height: 72,
+    borderRadius: radius.lg,
+    backgroundColor: colors.highlightSoft,
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: space.sm,

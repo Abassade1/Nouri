@@ -9,13 +9,13 @@ import { usePetDetail } from '@/features/pets/hooks';
 import { petsRepo, type PickedImage } from '@/features/pets/repo';
 import { useAuth } from '@/providers/AuthProvider';
 import { space } from '@/theme/tokens';
+import { SPECIES } from '@/features/pets/species';
 import { emptyHealth, type InsuranceStatus, type PetSex, type PetSpecies, type PetTag } from '@/types/pets';
 
 import { Button, Checkbox, ChipSelect, Text, TextField } from '../../ui';
 import { FormScreen } from '../FormScreen';
 import { PetAvatar } from './PetAvatar';
 
-const SPECIES: PetSpecies[] = ['dog', 'cat', 'other'];
 const SEX: PetSex[] = ['male', 'female', 'unknown'];
 const TAGS: PetTag[] = ['healthy', 'senior', 'special_needs', 'on_medication'];
 const INSURANCE: InsuranceStatus[] = ['unknown', 'none', 'insured'];

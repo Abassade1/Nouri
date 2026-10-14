@@ -1,7 +1,7 @@
 import { ActivityIndicator, Pressable, StyleSheet, View, type StyleProp, type ViewStyle } from 'react-native';
 import Animated, { useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated';
 
-import { colors, layout, radius, space, motion } from '@/theme/tokens';
+import { colors, layout, radius, shadow, space, motion } from '@/theme/tokens';
 
 import { Icon, type IconName } from './Icon';
 import { Text } from './Text';
@@ -63,14 +63,14 @@ export function Button({ label, onPress, variant = 'primary', loading, disabled,
 const styles = StyleSheet.create({
   base: {
     minHeight: layout.minTouch + 4,
-    borderRadius: radius.md,
+    borderRadius: radius.pill,
     paddingHorizontal: space.xl,
     alignItems: 'center',
     justifyContent: 'center',
   },
   row: { flexDirection: 'row', alignItems: 'center', gap: space.sm },
-  primary: { backgroundColor: colors.accent },
-  secondary: { backgroundColor: colors.surface, borderWidth: 1, borderColor: colors.lineStrong },
+  primary: { backgroundColor: colors.accent, ...shadow.raised, shadowOpacity: 0.22 },
+  secondary: { backgroundColor: colors.surface, borderWidth: 1, borderColor: colors.line, ...shadow.card },
   ghost: { backgroundColor: 'transparent' },
-  inactive: { opacity: 0.5 },
+  inactive: { opacity: 0.45, shadowOpacity: 0, elevation: 0 },
 });

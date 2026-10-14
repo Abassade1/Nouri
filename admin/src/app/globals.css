@@ -119,3 +119,4 @@ small.muted { font-size: 12px; }
 a.btn { text-decoration: none; display: inline-block; white-space: nowrap; }
 a.btn-primary, a.btn-primary:visited { color: var(--on-accent); }
 a.btn:not(.btn-primary) { color: var(--ink); }
+.service-cover { display: block; width: 100%; max-width: 420px; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 16px; margin-block: 12px; }

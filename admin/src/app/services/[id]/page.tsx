@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-import { saveServiceAction } from "@/app/actions";
+import { saveServiceAction, serviceImageAction } from "@/app/actions";
 import { ServiceFields } from "@/components/ServiceFields";
 import { requireAdmin } from "@/lib/auth";
 import { getI18n } from "@/lib/i18n";
-import { getService } from "@/lib/services";
+import { getService, serviceImageUrl } from "@/lib/services";
 
 export default async function ServiceDetail({
   params, searchParams,
@@ -33,6 +33,27 @@ export default async function ServiceDetail({
 
       <p className="muted small">{fill(t.impact, { carers: String(s.carers), cities: String(s.cities), bookings: String(s.open_bookings) })}</p>
       {s.cities === 0 ? <p className="muted small">{t.enableHint} <Link href="/cities">{t.goCities} →</Link></p> : null}
+
+      <section className="card">
+        <h2>{t.image}</h2>
+        <p className="muted small">{t.imageHelp}</p>
+        {serviceImageUrl(s.image_path) ? (
+          // eslint-disable-next-line @next/next/no-img-element -- remote Supabase image, shown as-is
+          <img src={serviceImageUrl(s.image_path)!} alt="" className="service-cover" />
+        ) : <p className="muted">{t.noImage}</p>}
+        <form action={serviceImageAction} className="split">
+          <input type="hidden" name="serviceId" value={s.id} />
+          <input type="file" name="image" accept="image/jpeg,image/png,image/webp" required aria-label={t.image} />
+          <button className="btn btn-primary">{t.upload}</button>
+        </form>
+        {s.image_path ? (
+          <form action={serviceImageAction}>
+            <input type="hidden" name="serviceId" value={s.id} />
+            <input type="hidden" name="remove" value="1" />
+            <button className="btn">{t.removeImage}</button>
+          </form>
+        ) : null}
+      </section>
 
       <form action={saveServiceAction} className="stack">
         <input type="hidden" name="serviceId" value={s.id} />

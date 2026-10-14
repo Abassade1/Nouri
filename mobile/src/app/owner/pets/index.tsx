@@ -6,7 +6,7 @@ import { PetAvatar } from '@/components/features/pets/PetAvatar';
 import { formatAge } from '@/components/features/pets/format';
 import { Button, Chip, EmptyState, Icon, Reveal, Screen, ScreenTitle, Text } from '@/components/ui';
 import { usePets } from '@/features/pets/hooks';
-import { colors, radius, space } from '@/theme/tokens';
+import { colors, radius, shadow, space } from '@/theme/tokens';
 
 export default function PetsList() {
   const { t } = useTranslation('pets');
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
   list: { gap: space.md },
   row: {
     flexDirection: 'row', alignItems: 'center', gap: space.lg, padding: space.lg,
-    backgroundColor: colors.surface, borderRadius: radius.lg, borderWidth: 1, borderColor: colors.line,
+    backgroundColor: colors.surface, borderRadius: radius.lg, ...shadow.card,
   },
   info: { flex: 1, gap: 4 },
   tags: { flexDirection: 'row', flexWrap: 'wrap', gap: space.xs, marginTop: 2 },

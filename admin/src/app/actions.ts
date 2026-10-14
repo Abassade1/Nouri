@@ -10,7 +10,7 @@ import { refundOwner, sideWithCarer } from "@/lib/ops";
 import { createCity, getCity, languagesEnabled, saveCity } from "@/lib/cities";
 import { parseCitySettings, parseNewCity, readNames } from "@/lib/city-form";
 import { parseService, parseSlug } from "@/lib/service-form";
-import { createService, getService, saveService } from "@/lib/services";
+import { createService, getService, removeServiceImage, saveService, setServiceImage } from "@/lib/services";
 import { deleteWaitlistEntry, markCityContacted } from "@/lib/waitlist";
 import { LOCALES } from "@/lib/i18n";
 import { PREVIEW } from "@/lib/preview";
@@ -151,6 +151,18 @@ export async function saveServiceAction(formData: FormData) {
       back(err ? `error=${err}` : "saved=1");
     }
   }
+}
+
+export async function serviceImageAction(formData: FormData) {
+  await requireAdmin();
+  const id = String(formData.get("serviceId"));
+  const file = formData.get("image");
+  const err = formData.get("remove")
+    ? await removeServiceImage(id)
+    : file instanceof File ? await setServiceImage(id, file) : "image_invalid";
+  revalidatePath("/services");
+  revalidatePath(`/services/${id}`);
+  redirect(`/services/${id}?${err ? `error=${err}` : "saved=1"}`);
 }
 
 export async function createServiceAction(formData: FormData) {

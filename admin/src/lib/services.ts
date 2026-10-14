@@ -13,6 +13,8 @@ export type ServiceRow = {
   icon: string | null;
   sort_order: number;
   is_active: boolean;
+  /** Cover photo in the public 'service-images' bucket; the apps fall back to a bundled photo. */
+  image_path?: string | null;
   cities: number;   // cities with it switched on
   carers: number;   // carers currently offering it
 };
@@ -22,7 +24,7 @@ export type ServiceDetail = ServiceRow & {
   audit: { id: string; created_at: string; admin_name: string | null; action: string; summary: string }[];
 };
 
-const COLS = "id, slug, name_i18n, description_i18n, rate_unit, icon, sort_order, is_active";
+const COLS = "id, slug, name_i18n, description_i18n, rate_unit, icon, sort_order, is_active, image_path";
 
 export async function listServices(): Promise<ServiceRow[]> {
   if (PREVIEW) return adminPreview.serviceList();
@@ -35,7 +37,7 @@ export async function listServices(): Promise<ServiceRow[]> {
   if (error) throw error;
   return (data ?? []).map((s: any) => ({
     id: s.id, slug: s.slug, name_i18n: s.name_i18n, description_i18n: s.description_i18n ?? {}, rate_unit: s.rate_unit, icon: s.icon,
-    sort_order: s.sort_order, is_active: s.is_active,
+    sort_order: s.sort_order, is_active: s.is_active, image_path: s.image_path,
     cities: (s.city_services ?? []).filter((c: any) => c.is_enabled).length,
     carers: (s.carer_services ?? []).filter((c: any) => c.is_active).length,
   }));
@@ -83,6 +85,45 @@ export async function saveService(id: string, input: ServiceInput): Promise<stri
   const supabase = await createClient();
   const { error } = await supabase.from("services").update(input).eq("id", id);
   return mapError(error);
+}
+
+const IMAGE_TYPES: Record<string, string> = { "image/jpeg": "jpg", "image/png": "png", "image/webp": "webp" };
+const IMAGE_MAX = 5 * 1024 * 1024;
+
+/** Public URL of a service cover image. */
+export function serviceImageUrl(path: string | null | undefined): string | null {
+  if (!path || !process.env.NEXT_PUBLIC_SUPABASE_URL) return null;
+  return `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/service-images/${path}`;
+}
+
+/** Uploads a new cover image, points the service at it, then deletes the previous file. */
+export async function setServiceImage(id: string, file: File): Promise<string | null> {
+  const ext = IMAGE_TYPES[file.type];
+  if (!ext || file.size === 0 || file.size > IMAGE_MAX) return "image_invalid";
+  if (PREVIEW) return null;
+  const supabase = await createClient();
+  const { data: before } = await supabase.from("services").select("image_path").eq("id", id).maybeSingle();
+  const path = `${id}/${Date.now()}.${ext}`;
+  const up = await supabase.storage.from("service-images").upload(path, file, { contentType: file.type });
+  if (up.error) return "generic";
+  const { error } = await supabase.from("services").update({ image_path: path }).eq("id", id);
+  if (error) {
+    await supabase.storage.from("service-images").remove([path]);
+    return mapError(error);
+  }
+  if (before?.image_path) await supabase.storage.from("service-images").remove([before.image_path]);
+  return null;
+}
+
+/** Removes the cover image; the apps go back to their bundled photo. */
+export async function removeServiceImage(id: string): Promise<string | null> {
+  if (PREVIEW) return null;
+  const supabase = await createClient();
+  const { data: before } = await supabase.from("services").select("image_path").eq("id", id).maybeSingle();
+  const { error } = await supabase.from("services").update({ image_path: null }).eq("id", id);
+  if (error) return mapError(error);
+  if (before?.image_path) await supabase.storage.from("service-images").remove([before.image_path]);
+  return null;
 }
 
 export async function createService(slug: string, input: ServiceInput): Promise<{ id?: string; error?: string }> {

@@ -18,7 +18,8 @@
     "clear": "清除筛选",
     "loadError": "无法加载照护者，请检查网络后重试。",
     "noCities": "暂无开放的城市。",
-    "today": "今天"
+    "today": "今天",
+    "animal": "动物"
   },
   "units": {
     "per_visit": "每次上门",
@@ -56,7 +57,8 @@
     "basedIn": "所在区域：{{area}}",
     "request": "申请预约",
     "reviewCount": "{{count}} 条评价",
-    "rating": "评分 {{rating}} / 5"
+    "rating": "评分 {{rating}} / 5",
+    "photos": "照片"
   },
   "specialties": {
     "senior_care": "老年宠物",

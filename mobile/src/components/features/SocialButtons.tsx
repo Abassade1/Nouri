@@ -5,7 +5,7 @@ import { Platform, StyleSheet, View } from 'react-native';
 
 import { toAppError } from '@/lib/errors';
 import { useAuth } from '@/providers/AuthProvider';
-import { space } from '@/theme/tokens';
+import { colors, space } from '@/theme/tokens';
 
 import { Button, Text } from '../ui';
 
@@ -55,5 +55,5 @@ export function SocialButtons({ onError }: { onError: (message: string) => void 
 const styles = StyleSheet.create({
   wrap: { gap: space.md, marginTop: space.xl },
   or: { flexDirection: 'row', alignItems: 'center', gap: space.md, marginBottom: space.xs },
-  line: { flex: 1, height: StyleSheet.hairlineWidth, backgroundColor: '#CFC8B9' },
+  line: { flex: 1, height: StyleSheet.hairlineWidth, backgroundColor: colors.lineStrong },
 });

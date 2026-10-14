@@ -1,4 +1,4 @@
-export type PetSpecies = 'dog' | 'cat' | 'other';
+export type PetSpecies = 'dog' | 'cat' | 'horse' | 'bird' | 'rabbit' | 'small_mammal' | 'reptile' | 'fish' | 'other';
 export type PetSex = 'male' | 'female' | 'unknown';
 export type PetTag = 'healthy' | 'senior' | 'special_needs' | 'on_medication';
 export type InsuranceStatus = 'unknown' | 'none' | 'insured';

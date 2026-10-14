@@ -5,7 +5,8 @@ import { StyleSheet, View } from 'react-native';
 
 import { BackLink } from '@/components/features/BackLink';
 import { SocialButtons } from '@/components/features/SocialButtons';
-import { Button, Checkbox, OptionCard, Reveal, Screen, Text, TextField } from '@/components/ui';
+import { Button, Checkbox, OptionCard, PhotoBanner, Reveal, Screen, Text, TextField } from '@/components/ui';
+import { photos } from '@/features/media/serviceImages';
 import { APP_NAME } from '@/config/app';
 import { toAppError } from '@/lib/errors';
 import { isValidEmail, MIN_PASSWORD_LENGTH } from '@/lib/validation';
@@ -54,6 +55,9 @@ export default function SignUp() {
   return (
     <Screen>
       <BackLink />
+      <Reveal>
+        <PhotoBanner source={photos.authBanner} />
+      </Reveal>
       <Reveal>
         <Text variant="display" style={styles.title}>
           {t('signUp.title')}

@@ -43,7 +43,9 @@
     "postalCode": "Code postal du domicile",
     "postalHint": "Sert à vous associer aux propriétaires proches. Les propriétaires ne voient que la première partie.",
     "save": "Enregistrer",
-    "saving": "Enregistrement…"
+    "saving": "Enregistrement…",
+    "species": "Animaux dont je m'occupe",
+    "speciesRequired": "Choisissez au moins un type d'animal."
   },
   "specialties": {
     "senior_care": "Animaux âgés",

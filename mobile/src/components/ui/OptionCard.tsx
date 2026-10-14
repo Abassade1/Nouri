@@ -1,6 +1,6 @@
 import { Pressable, StyleSheet, View } from 'react-native';
 
-import { colors, radius, space } from '@/theme/tokens';
+import { colors, radius, shadow, space } from '@/theme/tokens';
 
 import { Icon } from './Icon';
 import { Text } from './Text';
@@ -32,22 +32,23 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: space.lg,
-    padding: space.lg,
-    borderRadius: radius.md,
-    borderWidth: 1,
-    borderColor: colors.line,
+    padding: space.xl,
+    borderRadius: radius.lg,
+    borderWidth: 1.5,
+    borderColor: 'transparent',
     backgroundColor: colors.surface,
+    ...shadow.card,
   },
-  selected: { borderColor: colors.accent, backgroundColor: colors.accentSoft },
+  selected: { borderColor: colors.accent, backgroundColor: colors.accentSoft, shadowOpacity: 0, elevation: 0 },
   text: { flex: 1, gap: 2 },
   dot: {
-    width: 22,
-    height: 22,
+    width: 24,
+    height: 24,
     borderRadius: radius.pill,
     borderWidth: 1,
     borderColor: colors.lineStrong,
     alignItems: 'center',
     justifyContent: 'center',
   },
-  dotOn: { backgroundColor: colors.accent, borderColor: colors.accent },
+  dotOn: { backgroundColor: colors.highlight, borderColor: colors.highlight },
 });

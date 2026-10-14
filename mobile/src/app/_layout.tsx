@@ -7,7 +7,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import { detectInitialLanguage, initI18n } from '@/i18n';
-import { applyDirection, restartApp } from '@/i18n/direction';
+import { applyDirection, restartApp, shouldRestartForDirection } from '@/i18n/direction';
 import { AuthProvider, useAuth } from '@/providers/AuthProvider';
 import { LocaleProvider, useLocale } from '@/providers/LocaleProvider';
 import { PaymentsProvider } from '@/providers/PaymentsProvider';
@@ -18,7 +18,8 @@ import { colors } from '@/theme/tokens';
 void SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
-  const [fontsLoaded] = useFonts(fontAssets);
+  // A font that fails to load falls back to the system font rather than holding the splash screen forever.
+  const [fontsLoaded, fontError] = useFonts(fontAssets);
   const [i18nReady, setI18nReady] = useState(false);
 
   // Language + reading direction must be settled before the first screen renders.
@@ -27,7 +28,7 @@ export default function RootLayout() {
       const language = await detectInitialLanguage();
       await initI18n(language);
       const { restartRequired } = applyDirection(language);
-      if (restartRequired) {
+      if (restartRequired && (await shouldRestartForDirection(language))) {
         await restartApp(); // first launch on an Arabic device: restart once to flip layout
         return;
       }
@@ -35,7 +36,7 @@ export default function RootLayout() {
     })();
   }, []);
 
-  if (!fontsLoaded || !i18nReady) return null;
+  if ((!fontsLoaded && !fontError) || !i18nReady) return null;
 
   return (
     <GestureHandlerRootView style={{ flex: 1, backgroundColor: colors.paper }}>
@@ -71,6 +72,7 @@ function RootNavigator() {
       <Stack.Screen name="index" />
       <Stack.Screen name="auth/callback" />
       <Stack.Screen name="waitlist" />
+      <Stack.Screen name="plus" />
       <Stack.Protected guard={status === 'signedOut'}>
         <Stack.Screen name="(auth)" />
       </Stack.Protected>

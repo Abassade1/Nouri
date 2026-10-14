@@ -9,7 +9,7 @@ type Tone = 'neutral' | 'accent' | 'danger';
 export function Chip({ label, tone = 'neutral' }: { label: string; tone?: Tone }) {
   return (
     <View style={[styles.chip, tone === 'accent' && styles.accent, tone === 'danger' && styles.danger]}>
-      <Text variant="caption" color={tone === 'accent' ? 'accent' : tone === 'danger' ? 'danger' : 'inkMuted'}>
+      <Text variant="caption" color={tone === 'accent' ? 'highlight' : tone === 'danger' ? 'danger' : 'inkMuted'}>
         {label}
       </Text>
     </View>
@@ -20,10 +20,10 @@ const styles = StyleSheet.create({
   chip: {
     alignSelf: 'flex-start',
     paddingHorizontal: space.md,
-    paddingVertical: 4,
+    paddingVertical: 5,
     borderRadius: radius.pill,
     backgroundColor: colors.sunken,
   },
-  accent: { backgroundColor: colors.accentSoft },
+  accent: { backgroundColor: colors.highlightSoft },
   danger: { backgroundColor: colors.dangerSoft },
 });

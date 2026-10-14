@@ -12,6 +12,12 @@
   "species": {
     "dog": "狗",
     "cat": "猫",
+    "horse": "马",
+    "bird": "鸟",
+    "rabbit": "兔子",
+    "small_mammal": "小型哺乳动物",
+    "reptile": "爬行动物",
+    "fish": "鱼",
     "other": "其他"
   },
   "sex": {

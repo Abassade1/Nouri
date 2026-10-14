@@ -29,9 +29,14 @@ export interface WebhookDb {
     carer_id: string; stripe_payout_id: string; amount_cents: number; currency: string;
     status: 'pending' | 'in_transit' | 'paid' | 'failed'; paid_at: string | null;
   }): Promise<void>;
+  userIdByCustomer(stripeCustomerId: string): Promise<string | null>;
+  upsertSubscription(row: {
+    user_id: string; stripe_subscription_id: string; status: string;
+    current_period_end: string | null; cancel_at_period_end: boolean;
+  }): Promise<void>;
 }
 
-export type HandleResult = 'duplicate' | 'ignored' | 'confirmed' | 'payment_failed' | 'refund_recorded' | 'account_updated' | 'payout_recorded' | 'amount_mismatch';
+export type HandleResult = 'duplicate' | 'ignored' | 'confirmed' | 'payment_failed' | 'refund_recorded' | 'account_updated' | 'payout_recorded' | 'amount_mismatch' | 'subscription_updated';
 
 const PAYOUT_STATUS: Record<string, 'pending' | 'in_transit' | 'paid' | 'failed'> = {
   pending: 'pending', in_transit: 'in_transit', paid: 'paid', failed: 'failed', canceled: 'failed',
@@ -100,6 +105,26 @@ export async function handleStripeEvent(event: StripeEventLike, db: WebhookDb, n
         paid_at: status === 'paid' && obj.arrival_date ? new Date(obj.arrival_date * 1000).toISOString() : null,
       });
       return 'payout_recorded';
+    }
+
+    // Nouri Plus. Deleted subscriptions arrive with status 'canceled', which ends membership.
+    case 'customer.subscription.created':
+    case 'customer.subscription.updated':
+    case 'customer.subscription.deleted': {
+      if (event.account) return 'ignored'; // only the platform sells memberships
+      const customer = typeof obj.customer === 'string' ? obj.customer : obj.customer?.id;
+      const userId = (obj.metadata?.user_id as string | undefined) ?? (customer ? await db.userIdByCustomer(customer) : null);
+      if (!userId) return 'ignored';
+      // Newer Stripe API versions report the period end per subscription item.
+      const periodEnd = obj.current_period_end ?? obj.items?.data?.[0]?.current_period_end ?? null;
+      await db.upsertSubscription({
+        user_id: userId,
+        stripe_subscription_id: obj.id,
+        status: event.type === 'customer.subscription.deleted' ? 'canceled' : String(obj.status),
+        current_period_end: periodEnd ? new Date(periodEnd * 1000).toISOString() : null,
+        cancel_at_period_end: !!obj.cancel_at_period_end,
+      });
+      return 'subscription_updated';
     }
 
     default:

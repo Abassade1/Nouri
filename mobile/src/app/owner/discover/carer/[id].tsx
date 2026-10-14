@@ -1,18 +1,21 @@
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { StyleSheet, View } from 'react-native';
+import { Image } from 'expo-image';
+import { ScrollView, StyleSheet, View } from 'react-native';
 
 import { BackLink } from '@/components/features/BackLink';
 import { CarerAvatar } from '@/components/features/CarerAvatar';
 import { RatingLabel } from '@/components/features/RatingLabel';
 import { Button, Card, Chip, Icon, Reveal, Screen, Text } from '@/components/ui';
 import { marketplaceRepo } from '@/features/marketplace/repo';
+import { publicUrl } from '@/features/media/repo';
+import { serviceImage } from '@/features/media/serviceImages';
 import type { CarerDetail, CityInfo, ServiceInfo } from '@/features/marketplace/types';
 import { formatClock, formatCurrency, formatDate, localized, weekdayName } from '@/lib/format';
 import { trimTime } from '@/lib/time';
 import { useLocale } from '@/providers/LocaleProvider';
-import { space } from '@/theme/tokens';
+import { colors, radius, shadow, space } from '@/theme/tokens';
 
 const ORDER = [1, 2, 3, 4, 5, 6, 0]; // Monday first
 
@@ -46,14 +49,24 @@ export default function CarerProfile() {
   if (!detail) return <Screen><BackLink />{loaded ? <Text color="inkMuted">{t('profile.notFound')}</Text> : null}</Screen>;
   const c = detail.listing;
   const byId = new Map(services.map((s) => [s.id, s]));
+  const firstService = byId.get(c.services[0]?.service_id ?? '');
+  const ownCover = publicUrl('carer-photos', detail.photos[0]?.path);
+  const cover = ownCover ? { uri: ownCover } : firstService ? serviceImage(firstService) : null;
 
   return (
     <Screen footer={<Button label={t('profile.request')} onPress={() => router.push({ pathname: '/owner/discover/book/[carerId]', params: { carerId: c.user_id, ...(flag ? { flag } : {}), ...(service ? { service } : {}) } })} />}>
       <BackLink />
       <Reveal>
-        <View style={styles.hero}>
-          <CarerAvatar name={c.display_name} path={c.avatar_path} size={88} />
-          <View style={{ flex: 1, gap: 4 }}>
+        {cover ? (
+          <View style={styles.cover}>
+            <Image source={cover} style={StyleSheet.absoluteFill} contentFit="cover" transition={250} />
+          </View>
+        ) : null}
+        <View style={[styles.hero, cover ? styles.heroOverlap : null]}>
+          <View style={styles.avatarRing}>
+            <CarerAvatar name={c.display_name} path={c.avatar_path} size={88} />
+          </View>
+          <View style={[{ flex: 1, gap: 4 }, cover ? styles.heroText : null]}>
             <Text variant="title" auto>{c.display_name}</Text>
             <RatingLabel avg={c.rating_avg} count={c.rating_count} />
             {c.postal_area ? <Text variant="caption" color="inkFaint">{t('profile.basedIn', { area: c.postal_area })}</Text> : null}
@@ -80,6 +93,28 @@ export default function CarerProfile() {
           </View>
         ) : null}
 
+        {detail.photos.length ? (
+          <View style={styles.section}>
+            <Text variant="heading">{t('profile.photos')}</Text>
+            <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.gallery}>
+              {detail.photos.map((p) => {
+                const tag = p.service_id ? byId.get(p.service_id) : undefined;
+                return (
+                  <View key={p.id} style={styles.photo} accessible accessibilityRole="image" accessibilityLabel={p.caption ?? (tag ? localized(tag.name_i18n, language) : undefined)}>
+                    <Image source={{ uri: publicUrl('carer-photos', p.path) ?? undefined }} style={StyleSheet.absoluteFill} contentFit="cover" transition={200} />
+                    {tag || p.caption ? (
+                      <View style={styles.photoScrim}>
+                        {tag ? <Text variant="caption" color="onAccent" numberOfLines={1}>{localized(tag.name_i18n, language)}</Text> : null}
+                        {p.caption ? <Text variant="caption" color="onAccentMuted" numberOfLines={2} auto>{p.caption}</Text> : null}
+                      </View>
+                    ) : null}
+                  </View>
+                );
+              })}
+            </ScrollView>
+          </View>
+        ) : null}
+
         <View style={styles.section}>
           <Text variant="heading">{t('profile.about')}</Text>
           <Text auto>{c.bio}</Text>
@@ -95,6 +130,7 @@ export default function CarerProfile() {
               const svc = byId.get(s.service_id);
               return (
                 <View key={s.service_id} style={styles.rate}>
+                  {svc ? <Image source={serviceImage(svc)} style={styles.thumb} contentFit="cover" /> : null}
                   <Text style={{ flex: 1 }}>{svc ? localized(svc.name_i18n, language) : ''}</Text>
                   <View style={{ alignItems: 'flex-end' }}>
                     <Text variant="bodyStrong">{city ? formatCurrency(s.rate_cents, city.currency, language) : ''}</Text>
@@ -144,7 +180,15 @@ export default function CarerProfile() {
 }
 
 const styles = StyleSheet.create({
+  cover: { height: 220, borderRadius: radius.lg, overflow: 'hidden', backgroundColor: colors.sunken, marginTop: space.md, ...shadow.card },
   hero: { flexDirection: 'row', alignItems: 'center', gap: space.lg },
+  heroOverlap: { marginTop: -44, paddingHorizontal: space.md, alignItems: 'flex-start' },
+  heroText: { paddingTop: 52 },
+  avatarRing: { borderRadius: radius.pill, borderWidth: 4, borderColor: colors.paper, backgroundColor: colors.paper },
+  gallery: { gap: space.md, paddingEnd: space.lg },
+  photo: { width: 200, height: 250, borderRadius: radius.lg, overflow: 'hidden', backgroundColor: colors.sunken },
+  photoScrim: { position: 'absolute', start: 0, end: 0, bottom: 0, padding: space.md, backgroundColor: colors.overlay, gap: 2 },
+  thumb: { width: 44, height: 44, borderRadius: radius.sm },
   sections: { gap: space.xxl, marginTop: space.xxl },
   section: { gap: space.sm },
   badgeCard: { flexDirection: 'row', gap: space.md, alignItems: 'flex-start' },

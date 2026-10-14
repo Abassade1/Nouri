@@ -23,7 +23,7 @@ export function TextField({ label, hint, error, ltr, secureTextEntry, ...rest }:
 
   return (
     <View style={styles.wrap}>
-      <Text variant="caption" color="inkMuted" style={styles.label}>
+      <Text variant="caption" color="ink" style={styles.label}>
         {label}
       </Text>
       <View style={[styles.box, rest.multiline && styles.multiline, focused && styles.focused, !!error && styles.errored]}>
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: space.lg,
     backgroundColor: colors.surface,
     borderRadius: radius.md,
-    borderWidth: 1,
+    borderWidth: 1.5,
     borderColor: colors.line,
   },
   multiline: { alignItems: 'flex-start' },

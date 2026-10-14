@@ -1,6 +1,8 @@
 import type { I18nText } from '@/lib/format';
 import type { TaxComponent } from '@/lib/pricing';
+import type { CarerPhoto } from '@/features/media/repo';
 import type { CredentialType, RateUnit } from '@/types/db';
+import type { PetSpecies } from '@/types/pets';
 
 export type CityInfo = {
   id: string;
@@ -10,7 +12,7 @@ export type CityInfo = {
   tax_components: TaxComponent[];
 };
 
-export type ServiceInfo = { id: string; slug: string; name_i18n: I18nText; rate_unit: RateUnit };
+export type ServiceInfo = { id: string; slug: string; name_i18n: I18nText; rate_unit: RateUnit; image_path?: string | null };
 
 export type CarerListing = {
   user_id: string;
@@ -27,6 +29,10 @@ export type CarerListing = {
   avatar_path: string | null;
   verified_badges: CredentialType[];
   services: { service_id: string; rate_cents: number }[];
+  /** First photo of the carer's gallery, shown on their listing card. */
+  cover_photo_path?: string | null;
+  /** Kinds of animal the carer looks after (dogs and cats if never set). */
+  species_served?: PetSpecies[];
 };
 
 export type AvailabilityWindow = { id: string; weekday: number; start_time: string; end_time: string };
@@ -38,6 +44,7 @@ export type CarerDetail = {
   badges: Badge[];
   reviews: Review[];
   availability: AvailabilityWindow[];
+  photos: CarerPhoto[];
 };
 
 export type NewBooking = {

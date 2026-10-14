@@ -66,6 +66,15 @@ export default function CarerToday() {
           </View>
         </Card>
       </Reveal>
+      <Reveal delay={210}>
+        <Card style={{ marginTop: space.lg }}>
+          <Text variant="overline" color="inkFaint">{t('photos.cardTitle')}</Text>
+          <Text color="inkMuted">{t('photos.cardBody')}</Text>
+          <View style={styles.cta}>
+            <Button variant="secondary" icon="image" label={t('photos.open')} onPress={() => router.push('/carer/photos')} />
+          </View>
+        </Card>
+      </Reveal>
       <Reveal delay={240}>
         <Card style={{ marginTop: space.lg }}>
           <Text variant="overline" color="inkFaint">{tv('carerReviews.title')}</Text>

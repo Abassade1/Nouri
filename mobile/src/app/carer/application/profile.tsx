@@ -2,6 +2,8 @@ import { useRouter } from 'expo-router';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { SPECIES } from '@/features/pets/species';
+import type { PetSpecies } from '@/types/pets';
 import { FormScreen } from '@/components/features/FormScreen';
 import { Button, ChipSelect, OptionCard, Text, TextField } from '@/components/ui';
 import { applicationRepo, type CityOption } from '@/features/carer/repo';
@@ -15,6 +17,7 @@ const LANGS = ['en', 'fr', 'ar', 'zh', 'es', 'pa'] as const;
 
 export default function ProfileStep() {
   const { t } = useTranslation('application');
+  const { t: tp } = useTranslation('pets');
   const router = useRouter();
   const { language } = useLocale();
   const { data, userId, locked } = useApplication();
@@ -30,6 +33,7 @@ export default function ProfileStep() {
   const [postal, setPostal] = useState('');
   const [langs, setLangs] = useState<string[]>([]);
   const [specialties, setSpecialties] = useState<string[]>([]);
+  const [species, setSpecies] = useState<PetSpecies[]>(['dog', 'cat']);
   const [errors, setErrors] = useState<Record<string, string | undefined>>({});
   const [busy, setBusy] = useState(false);
 
@@ -50,6 +54,7 @@ export default function ProfileStep() {
     setPostal(p?.postal_code ?? '');
     setLangs(p?.languages_spoken ?? []);
     setSpecialties(p?.specialties ?? []);
+    setSpecies(p?.species_served?.length ? p.species_served : ['dog', 'cat']);
     setLoaded(true);
   }, [data, loaded]);
 
@@ -60,6 +65,7 @@ export default function ProfileStep() {
     if (!city) next.city = t('errors.required');
     if (!displayName.trim()) next.displayName = t('errors.required');
     if (!bio.trim()) next.bio = t('errors.required');
+    if (species.length === 0) next.species = t('profile.speciesRequired');
     const normalized = city ? normalizePostalCode(postal, city.postal_code_regex) : null;
     if (!normalized) next.postal = t('errors.invalidPostal', { example: city?.postal_code_example ?? '' });
     setErrors(next);
@@ -78,6 +84,7 @@ export default function ProfileStep() {
         postal_code: normalized,
         languages_spoken: langs,
         specialties,
+        species_served: species,
       });
       router.back();
     } catch {
@@ -109,6 +116,10 @@ export default function ProfileStep() {
 
       <Text variant="overline" color="inkMuted">{t('profile.languages')}</Text>
       <ChipSelect multiple options={LANGS.map((l) => ({ value: l, label: t(`languages.${l}`) }))} selected={langs} onChange={locked ? () => {} : setLangs} />
+
+      <Text variant="overline" color="inkMuted">{t('profile.species')}</Text>
+      <ChipSelect multiple options={SPECIES.filter((s) => s !== 'other').map((s) => ({ value: s, label: tp(`species.${s}`) }))} selected={species} onChange={locked ? () => {} : (v) => setSpecies(v as PetSpecies[])} />
+      {errors.species ? <Text variant="caption" color="danger">{errors.species}</Text> : null}
 
       <Text variant="overline" color="inkMuted">{t('profile.specialties')}</Text>
       <ChipSelect multiple options={SPECIALTIES.map((s) => ({ value: s, label: t(`specialties.${s}`) }))} selected={specialties} onChange={locked ? () => {} : setSpecialties} />

@@ -12,6 +12,12 @@
   "species": {
     "dog": "كلب",
     "cat": "قطة",
+    "horse": "حصان",
+    "bird": "طائر",
+    "rabbit": "أرنب",
+    "small_mammal": "حيوان ثديي صغير",
+    "reptile": "زواحف",
+    "fish": "سمك",
     "other": "أخرى"
   },
   "sex": {

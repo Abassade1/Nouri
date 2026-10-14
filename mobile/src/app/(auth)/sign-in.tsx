@@ -6,7 +6,8 @@ import { Platform, StyleSheet, View } from 'react-native';
 
 import { BackLink } from '@/components/features/BackLink';
 import { SocialButtons } from '@/components/features/SocialButtons';
-import { Button, Reveal, Screen, Text, TextField } from '@/components/ui';
+import { Button, PhotoBanner, Reveal, Screen, Text, TextField } from '@/components/ui';
+import { photos } from '@/features/media/serviceImages';
 import { toAppError } from '@/lib/errors';
 import { isValidEmail } from '@/lib/validation';
 import { useAuth } from '@/providers/AuthProvider';
@@ -42,6 +43,9 @@ export default function SignIn() {
   return (
     <Screen>
       <BackLink />
+      <Reveal>
+        <PhotoBanner source={photos.authBanner} />
+      </Reveal>
       <Reveal>
         <Text variant="display" style={styles.title}>
           {t('signIn.title')}

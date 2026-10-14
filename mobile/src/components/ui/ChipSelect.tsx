@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     paddingVertical: space.sm + 2,
     borderRadius: radius.pill,
     borderWidth: 1,
-    borderColor: colors.lineStrong,
+    borderColor: colors.line,
     backgroundColor: colors.surface,
   },
   on: { backgroundColor: colors.accent, borderColor: colors.accent },

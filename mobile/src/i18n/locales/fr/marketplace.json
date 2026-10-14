@@ -18,7 +18,8 @@
     "clear": "Effacer les filtres",
     "loadError": "Impossible de charger les intervenants. Vérifiez votre connexion et réessayez.",
     "noCities": "Aucune ville n'est ouverte pour le moment.",
-    "today": "Aujourd'hui"
+    "today": "Aujourd'hui",
+    "animal": "Animal"
   },
   "units": {
     "per_visit": "par visite",
@@ -56,7 +57,8 @@
     "basedIn": "Basé dans {{area}}",
     "request": "Demander une réservation",
     "reviewCount": "{{count}} avis",
-    "rating": "Note de {{rating}} sur 5"
+    "rating": "Note de {{rating}} sur 5",
+    "photos": "Photos"
   },
   "specialties": {
     "senior_care": "Animaux âgés",

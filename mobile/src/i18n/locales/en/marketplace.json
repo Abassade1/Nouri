@@ -18,7 +18,8 @@
     "clear": "Clear filters",
     "loadError": "We couldn't load carers. Check your connection and try again.",
     "noCities": "No cities are open yet.",
-    "today": "Today"
+    "today": "Today",
+    "animal": "Animal"
   },
   "units": {
     "per_visit": "per visit",
@@ -56,7 +57,8 @@
     "basedIn": "Based in {{area}}",
     "request": "Request a booking",
     "reviewCount": "{{count}} reviews",
-    "rating": "Rated {{rating}} out of 5"
+    "rating": "Rated {{rating}} out of 5",
+    "photos": "Photos"
   },
   "specialties": {
     "senior_care": "Senior pets",

@@ -6,6 +6,8 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useState, t
 import { Platform } from 'react-native';
 
 import { CONSENT_VERSION, PREVIEW_MODE, type LanguageCode } from '@/config/app';
+import { mediaRepo } from '@/features/media/repo';
+import type { PickedImage } from '@/features/pets/repo';
 import { previewProfile } from '@/features/preview/data';
 import { unregisterForPush } from '@/features/notifications/push';
 import { AppError, toAppError } from '@/lib/errors';
@@ -37,6 +39,8 @@ type AuthContextValue = {
   chooseRole: (role: Extract<UserRole, 'owner' | 'carer'>) => Promise<void>;
   signOut: () => Promise<void>;
   startPreview: (role: UserRole) => void;
+  /** Upload a new profile photo and show it everywhere straight away. */
+  setAvatar: (image: PickedImage) => Promise<void>;
 };
 
 const AuthContext = createContext<AuthContextValue | null>(null);
@@ -51,6 +55,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [profile, setProfile] = useState<Profile | null>(null);
   const [loading, setLoading] = useState(isBackendConfigured);
   const [previewRole, setPreviewRole] = useState<UserRole | null>(null);
+  const [previewAvatar, setPreviewAvatar] = useState<string | null>(null);
 
   const loadProfile = useCallback(async (userId: string) => {
     if (!supabase) return;
@@ -185,8 +190,23 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     [session, loadProfile],
   );
 
+  const setAvatar = useCallback(
+    async (image: PickedImage) => {
+      if (previewRole) return setPreviewAvatar(image.uri);
+      if (!session || !profile) throw new AppError('generic');
+      try {
+        const path = await mediaRepo.setAvatar(session.user.id, image, profile.avatar_path);
+        setProfile((p) => (p ? { ...p, avatar_path: path } : p));
+      } catch (e) {
+        throw toAppError(e);
+      }
+    },
+    [previewRole, session, profile],
+  );
+
   const signOut = useCallback(async () => {
     setPreviewRole(null);
+    setPreviewAvatar(null);
     await unregisterForPush().catch(() => {});
     if (supabase) await supabase.auth.signOut();
   }, []);
@@ -196,7 +216,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const value = useMemo<AuthContextValue>(() => {
-    const activeProfile = previewRole ? previewProfile(previewRole) : profile;
+    const activeProfile = previewRole ? { ...previewProfile(previewRole), avatar_path: previewAvatar } : profile;
     let status: AuthStatus;
     if (previewRole) status = 'ready';
     else if (loading) status = 'loading';
@@ -217,10 +237,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       chooseRole,
       signOut,
       startPreview,
+      setAvatar,
     };
   }, [
-    previewRole, profile, loading, session,
-    signInWithEmail, signUpWithEmail, signInWithApple, signInWithGoogle, chooseRole, signOut, startPreview,
+    previewRole, previewAvatar, profile, loading, session,
+    signInWithEmail, signUpWithEmail, signInWithApple, signInWithGoogle, chooseRole, signOut, startPreview, setAvatar,
   ]);
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

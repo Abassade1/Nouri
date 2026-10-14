@@ -18,7 +18,7 @@
     "android": {
       "package": "com.nouri.app",
       "adaptiveIcon": {
-        "backgroundColor": "#F7F4EE",
+        "backgroundColor": "#F4F5F2",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
         "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
@@ -62,7 +62,7 @@
       [
         "expo-splash-screen",
         {
-          "backgroundColor": "#F7F4EE",
+          "backgroundColor": "#F4F5F2",
           "image": "./assets/images/splash-icon.png",
           "imageWidth": 96
         }
@@ -77,7 +77,7 @@
       [
         "expo-notifications",
         {
-          "color": "#2D4A3E"
+          "color": "#0D3D2E"
         }
       ]
     ],

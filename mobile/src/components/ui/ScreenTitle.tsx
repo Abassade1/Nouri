@@ -11,7 +11,7 @@ export function ScreenTitle({ overline, title, subtitle }: { overline?: string; 
     <Reveal>
       <View style={styles.wrap}>
         {overline ? (
-          <Text variant="overline" color="accent">
+          <Text variant="overline" color="highlight">
             {overline}
           </Text>
         ) : null}

@@ -48,6 +48,8 @@ export type CarerProfileRow = {
   years_experience: number | null;
   languages_spoken: string[];
   specialties: string[];
+  /** Kinds of animal this carer looks after. */
+  species_served?: import('./pets').PetSpecies[];
   service_radius_km: number;
   postal_code: string | null;
   country_code: string | null;

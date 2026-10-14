@@ -1,18 +1,24 @@
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Image } from 'expo-image';
 import { Pressable, StyleSheet, View } from 'react-native';
 
 import { CarerAvatar } from '@/components/features/CarerAvatar';
 import { DateStrip } from '@/components/features/DateStrip';
 import { RatingLabel } from '@/components/features/RatingLabel';
+import { ServiceCards } from '@/components/features/ServiceCards';
+import { SpeciesPicker } from '@/components/features/SpeciesPicker';
 import { Button, Chip, ChipSelect, EmptyState, Icon, Reveal, Screen, ScreenTitle, Text } from '@/components/ui';
 import { marketplaceRepo } from '@/features/marketplace/repo';
+import { SPECIES } from '@/features/pets/species';
+import { carerCover } from '@/features/media/serviceImages';
 import type { AvailabilityWindow, CarerListing, CityInfo, ServiceInfo } from '@/features/marketplace/types';
 import { formatCurrency, localized } from '@/lib/format';
 import { generateSlots, upcomingDates, weekdayOf } from '@/lib/time';
 import { useLocale } from '@/providers/LocaleProvider';
-import { colors, radius, space } from '@/theme/tokens';
+import type { PetSpecies } from '@/types/pets';
+import { colors, radius, shadow, space } from '@/theme/tokens';
 
 const SPECIALTIES = ['senior_care', 'medication', 'anxious_pets', 'puppies', 'large_breeds', 'special_needs'] as const;
 const RATINGS = [0, 4, 4.5];
@@ -21,7 +27,7 @@ export default function Discover() {
   const { t } = useTranslation('marketplace');
   const { language } = useLocale();
   const router = useRouter();
-  const { service: serviceSlug, flag } = useLocalSearchParams<{ service?: string; flag?: string }>();
+  const { service: serviceSlug, flag, species: speciesParam } = useLocalSearchParams<{ service?: string; flag?: string; species?: string }>();
 
   const [cities, setCities] = useState<CityInfo[]>([]);
   const [city, setCity] = useState<CityInfo | null>(null);
@@ -31,6 +37,13 @@ export default function Discover() {
   const [state, setState] = useState<'loading' | 'ready' | 'error'>('loading');
 
   const [serviceId, setServiceId] = useState<string | null>(null);
+  const [species, setSpecies] = useState<PetSpecies | null>(SPECIES.includes(speciesParam as PetSpecies) ? (speciesParam as PetSpecies) : null);
+  // Arriving from a home-screen shortcut while already on this tab.
+  const [lastSpeciesParam, setLastSpeciesParam] = useState(speciesParam);
+  if (speciesParam !== lastSpeciesParam) {
+    setLastSpeciesParam(speciesParam);
+    setSpecies(SPECIES.includes(speciesParam as PetSpecies) ? (speciesParam as PetSpecies) : null);
+  }
   const [date, setDate] = useState<string | null>(null);
   const [minRating, setMinRating] = useState(0);
   const [specialties, setSpecialties] = useState<string[]>([]);
@@ -63,6 +76,7 @@ export default function Discover() {
     const unit = serviceId ? serviceById.get(serviceId)?.rate_unit ?? 'per_visit' : 'per_visit';
     return carers.filter((c) => {
       if (serviceId && !c.services.some((s) => s.service_id === serviceId)) return false;
+      if (species && !(c.species_served ?? ['dog', 'cat']).includes(species)) return false;
       if (minRating && c.rating_avg < minRating) return false;
       if (specialties.length && !specialties.some((s) => c.specialties.includes(s))) return false;
       if (date) {
@@ -71,10 +85,12 @@ export default function Discover() {
       }
       return true;
     });
-  }, [carers, availability, city, serviceId, date, minRating, specialties, serviceById]);
+  }, [carers, availability, city, serviceId, species, date, minRating, specialties, serviceById]);
 
-  const clear = () => { setServiceId(null); setDate(null); setMinRating(0); setSpecialties([]); };
-  const filtersActive = !!(serviceId || date || minRating || specialties.length);
+  const clear = () => { setServiceId(null); setSpecies(null); setDate(null); setMinRating(0); setSpecialties([]); };
+  const filtersActive = !!(serviceId || species || date || minRating || specialties.length);
+
+  const coverFor = (c: CarerListing) => carerCover(c, serviceById, serviceId);
 
   const priceFor = (c: CarerListing) => {
     const rates = serviceId ? c.services.filter((s) => s.service_id === serviceId) : c.services;
@@ -95,12 +111,9 @@ export default function Discover() {
       {city ? (
         <View style={styles.filters}>
           <Text variant="overline" color="inkMuted">{t('discover.service')}</Text>
-          <ChipSelect
-            scroll
-            options={[{ value: '', label: t('discover.all') }, ...services.map((s) => ({ value: s.id, label: localized(s.name_i18n, language) }))]}
-            selected={[serviceId ?? '']}
-            onChange={(v) => setServiceId(v[0] || null)}
-          />
+          <ServiceCards services={services} selected={serviceId} onSelect={setServiceId} allLabel={t('discover.all')} />
+          <Text variant="overline" color="inkMuted" style={{ marginTop: space.sm }}>{t('discover.animal')}</Text>
+          <SpeciesPicker selected={species} onSelect={setSpecies} allLabel={t('discover.all')} />
           <Text variant="overline" color="inkMuted" style={{ marginTop: space.sm }}>{t('discover.availableOn')}</Text>
           <DateStrip dates={dates} selected={date} onSelect={setDate} anyLabel={t('discover.anyDay')} />
 
@@ -136,9 +149,16 @@ export default function Discover() {
               onPress={() => router.push({ pathname: '/owner/discover/carer/[id]', params: { id: c.user_id, ...(flag ? { flag } : {}), ...(serviceSlug ? { service: serviceSlug } : {}) } })}
               style={styles.card}
             >
+              {coverFor(c) ? (
+                <View style={styles.cover}>
+                  <Image source={coverFor(c)!} style={StyleSheet.absoluteFill} contentFit="cover" transition={200} />
+                </View>
+              ) : null}
               <View style={styles.cardHead}>
-                <CarerAvatar name={c.display_name} path={c.avatar_path} size={56} />
-                <View style={{ flex: 1, gap: 2 }}>
+                <View style={coverFor(c) ? styles.avatarRing : null}>
+                  <CarerAvatar name={c.display_name} path={c.avatar_path} size={56} />
+                </View>
+                <View style={[{ flex: 1, gap: 2 }, coverFor(c) ? styles.headText : null]}>
                   <Text variant="heading" auto>{c.display_name}</Text>
                   {c.headline ? <Text variant="caption" color="inkMuted" auto numberOfLines={2}>{c.headline}</Text> : null}
                 </View>
@@ -162,7 +182,10 @@ const styles = StyleSheet.create({
   filters: { gap: space.sm, marginBottom: space.xl },
   moreToggle: { flexDirection: 'row', alignItems: 'center', gap: space.xs, alignSelf: 'flex-start', paddingVertical: space.sm },
   list: { gap: space.md },
-  card: { backgroundColor: colors.surface, borderRadius: radius.lg, borderWidth: 1, borderColor: colors.line, padding: space.lg, gap: space.md },
+  card: { backgroundColor: colors.surface, borderRadius: radius.lg, ...shadow.card, padding: space.lg, gap: space.md, overflow: 'hidden' },
+  cover: { height: 168, marginTop: -space.lg, marginHorizontal: -space.lg, marginBottom: -space.xl, backgroundColor: colors.sunken },
+  headText: { paddingTop: space.xl + space.xs },
+  avatarRing: { borderRadius: radius.pill, borderWidth: 3, borderColor: colors.surface, backgroundColor: colors.surface },
   cardHead: { flexDirection: 'row', gap: space.md, alignItems: 'center' },
   meta: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
   badges: { flexDirection: 'row', flexWrap: 'wrap', gap: space.xs },

@@ -3,15 +3,15 @@ import { useTranslation } from 'react-i18next';
 
 import { APP_NAME, LANGUAGE_NAMES, SUPPORTED_LANGUAGES, type LanguageCode } from '@/config/app';
 import { useLocale } from '@/providers/LocaleProvider';
-import { colors, layout, radius, space } from '@/theme/tokens';
+import { colors, layout, radius, shadow, space } from '@/theme/tokens';
 
 import { Text } from '../ui';
 
 /**
- * Segmented picker showing each language in its own script. Switching to or from
- * Arabic flips the reading direction, which on iOS/Android needs an app restart.
+ * Switch language. Switching to or from Arabic flips the reading direction, which on
+ * iOS/Android needs an app restart, so the person is asked first.
  */
-export function LanguageSwitcher() {
+export function useChooseLanguage() {
   const { language, setLanguage, restart } = useLocale();
   const { t } = useTranslation('account');
 
@@ -24,6 +24,16 @@ export function LanguageSwitcher() {
       { text: t('restart.confirm'), onPress: () => void restart() },
     ]);
   };
+
+  return { language, choose };
+}
+
+/**
+ * Segmented picker showing each language in its own script. Switching to or from
+ * Arabic flips the reading direction, which on iOS/Android needs an app restart.
+ */
+export function LanguageSwitcher() {
+  const { language, choose } = useChooseLanguage();
 
   return (
     <View style={styles.row} accessibilityRole="radiogroup">
@@ -51,15 +61,17 @@ export function LanguageSwitcher() {
 const styles = StyleSheet.create({
   row: {
     flexDirection: 'row',
-    backgroundColor: colors.sunken,
-    borderRadius: radius.md,
+    backgroundColor: colors.surface,
+    borderRadius: radius.pill,
+    ...shadow.raised,
+    shadowOpacity: 0.1,
     padding: 4,
     gap: 4,
   },
   item: {
     flex: 1,
     minHeight: layout.minTouch - 4,
-    borderRadius: radius.sm + 2,
+    borderRadius: radius.pill,
     alignItems: 'center',
     justifyContent: 'center',
     paddingHorizontal: space.sm,

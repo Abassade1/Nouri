@@ -149,9 +149,11 @@ const en = {
       impact: "In use by {carers} carers in {cities} cities, with {bookings} bookings in progress.",
       enableHint: "To offer this service somewhere, switch it on in that city's settings.", goCities: "Go to cities",
       save: "Save changes", saved: "Saved.", history: "Recent changes", noHistory: "No changes recorded yet.",
+      image: "Cover image", imageHelp: "Shown to owners on the service cards in the app. Use a landscape JPEG, PNG or WebP photo up to 5 MB. Without one, the app shows its built-in photo.", noImage: "No cover image yet: the app shows its built-in photo.", upload: "Upload", removeImage: "Remove image",
     },
   },
   errors: {
+    image_invalid: "Choose a JPEG, PNG or WebP image up to 5 MB.",
     description_required: "Please write an English description.",
     text_too_long: "Names can be up to 80 characters and descriptions up to 300.",
     invalid_unit: "Choose how the service is charged.",
