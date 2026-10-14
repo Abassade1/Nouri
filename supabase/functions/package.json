@@ -1,5 +1,5 @@
 {
-  "name": "sheppered-functions-dev",
+  "name": "nouri-functions-dev",
   "private": true,
   "type": "module",
   "description": "Dev-only tooling for type-checking and unit-testing the Edge Functions locally. Functions themselves run on Deno inside Supabase.",

@@ -1,7 +1,7 @@
 import type { Messages } from "./en";
 
 const fr: Messages = {
-  brand: "Sheppered",
+  brand: "Nouri",
   brandSub: "Administration",
   nav: { applications: "Candidatures", disputes: "Litiges", flags: "Préoccupations", payments: "Paiements", cities: "Villes", waitlist: "Liste d'attente", services: "Services" },
   signOut: "Se déconnecter",

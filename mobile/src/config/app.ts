@@ -1,5 +1,5 @@
 /** Working name of the product. Change in one place (and in app.json) when the brand is final. */
-export const APP_NAME = 'Sheppered';
+export const APP_NAME = 'Nouri';
 
 export const SUPPORTED_LANGUAGES = ['en', 'fr', 'ar', 'zh'] as const;
 export type LanguageCode = (typeof SUPPORTED_LANGUAGES)[number];

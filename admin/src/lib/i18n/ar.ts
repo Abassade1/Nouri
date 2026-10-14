@@ -1,7 +1,7 @@
 import type { Messages } from "./en";
 
 const ar: Messages = {
-  brand: "Sheppered",
+  brand: "Nouri",
   brandSub: "الإدارة",
   nav: { applications: "الطلبات", disputes: "النزاعات", flags: "تنبيهات القلق", payments: "المدفوعات", cities: "المدن", waitlist: "قائمة الانتظار", services: "الخدمات" },
   signOut: "تسجيل الخروج",

@@ -1,5 +1,5 @@
 const en = {
-  brand: "Sheppered",
+  brand: "Nouri",
   brandSub: "Admin",
   nav: { applications: "Applications", disputes: "Disputes", flags: "Concern flags", payments: "Payments", cities: "Cities", waitlist: "Waitlist", services: "Services" },
   signOut: "Sign out",

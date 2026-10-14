@@ -90,7 +90,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     };
   }, [loadProfile]);
 
-  // Email-confirmation and OAuth links land here as sheppered://auth/callback?code=...
+  // Email-confirmation and OAuth links land here as nouri://auth/callback?code=...
   useEffect(() => {
     if (!supabase || Platform.OS === 'web') return;
     const handle = async (url: string | null) => {

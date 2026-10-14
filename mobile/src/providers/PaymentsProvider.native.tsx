@@ -7,7 +7,7 @@ import { STRIPE_PUBLISHABLE_KEY } from '@/config/app';
 export function PaymentsProvider({ children }: { children: ReactElement }) {
   if (!STRIPE_PUBLISHABLE_KEY) return <>{children}</>;
   return (
-    <StripeProvider publishableKey={STRIPE_PUBLISHABLE_KEY} merchantIdentifier="merchant.com.sheppered.app" urlScheme="sheppered">
+    <StripeProvider publishableKey={STRIPE_PUBLISHABLE_KEY} merchantIdentifier="merchant.com.nouri.app" urlScheme="nouri">
       {children}
     </StripeProvider>
   );

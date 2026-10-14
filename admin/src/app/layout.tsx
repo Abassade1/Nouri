@@ -9,7 +9,7 @@ import "./globals.css";
 const plex = IBM_Plex_Sans({ subsets: ["latin"], weight: ["400", "500", "600"], variable: "--font-latin" });
 const plexArabic = IBM_Plex_Sans_Arabic({ subsets: ["arabic"], weight: ["400", "500", "600"], variable: "--font-arabic" });
 
-export const metadata: Metadata = { title: "Sheppered Admin", robots: { index: false, follow: false } };
+export const metadata: Metadata = { title: "Nouri Admin", robots: { index: false, follow: false } };
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const locale = await getLocale();

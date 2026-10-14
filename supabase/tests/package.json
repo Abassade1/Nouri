@@ -1,5 +1,5 @@
 {
-  "name": "sheppered-db-tests",
+  "name": "nouri-db-tests",
   "private": true,
   "type": "module",
   "scripts": { "test": "node rls.test.mjs" },

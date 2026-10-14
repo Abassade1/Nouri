@@ -1,4 +1,4 @@
-# Sheppered *(working name)*
+# Nouri
 
 A curated, premium pet-care marketplace. Every carer is credentialed, reviewed and approved by an admin before
 owners can see them. Launch market: Calgary. Built multi-city, multi-country and multi-language (English, French,
@@ -60,7 +60,7 @@ With `ADMIN_PREVIEW=true` there is no login and you get three sample application
    EXPO_PUBLIC_PREVIEW_MODE=false
    ```
    The anon key is meant to be public; the database's security rules protect the data.
-4. **Auth settings** (*Authentication → URL Configuration*): add `sheppered://auth/callback` to *Redirect URLs*
+4. **Auth settings** (*Authentication → URL Configuration*): add `nouri://auth/callback` to *Redirect URLs*
    (plus the Expo Go URL shown in the terminal while developing).
 5. **Apple / Google sign-in** (*Authentication → Providers*): needs your Apple Developer and Google Cloud accounts. See "Needs your input".
 6. **Run the admin dashboard** against it: in `admin/.env.local` set the same `NEXT_PUBLIC_SUPABASE_URL` / `NEXT_PUBLIC_SUPABASE_ANON_KEY` and `ADMIN_PREVIEW=false`, then `npm run dev -- --port 3001` and sign in with your admin account (step 10).
@@ -178,14 +178,14 @@ edited by the client, visit reports can't be changed after submission.
 
 | Area | What I need from you |
 |---|---|
-| **Brand** | Final app name (currently "Sheppered", set in `mobile/src/config/app.ts` and `app.json`), logo, bundle ID (`com.sheppered.app` is a placeholder). |
+| **Brand** | Final app name (currently "Nouri", set in `mobile/src/config/app.ts` and `app.json`), logo, bundle ID (`com.nouri.app` is a placeholder). |
 | **Legal** | Terms of Service, Privacy Policy and the exact consent wording (currently a placeholder string + version `2026-10-draft`); a lawyer should review, incl. PIPEDA and Quebec Law 25 before launching in Quebec; CASL wording for the waitlist. Data-erasure policy: account deletion is only partly designed (see below). |
 | **Tax** | The tax rates in `seed.sql` are illustrative. Confirm with an accountant what GST/PST applies to pet services and who collects it (platform vs carer), then adjust `cities.tax_components`. |
 | **Pricing & money policy** | Commission is a placeholder 15% in every city. Placeholder cancellation rule (full refund ≥24 h ahead, else 50%) and payout hold (24 h): **decide the real numbers**. When an owner cancels late, the withheld share currently stays with the platform; decide whether part should go to the carer. Also rate floors/ceilings per service. |
 | **Tax & who is the seller** | Today the platform charges the owner the tax and keeps it; decide with your accountant who collects and remits GST/PST (platform vs. each carer), and whether carers must be GST-registered. This also decides how receipts and carer statements are worded. |
 | **Insurance** | Platform liability cover, whether carers must hold their own, and which credentials count (the `insurance` credential type exists). Background-check provider choice (consent is captured; the check itself isn't wired). |
 | **Policy** | Minimum references required to apply (set to 2 in `guard_carer_profile`), who may become a carer, dispute window (7 days after completion is set in `bookings_before_update`). |
-| **Stripe** | A Stripe account with **Connect** enabled (Express accounts, Canada), your platform business details, and your decision on who is the merchant of record. Stripe reviews Connect platforms: allow time. Apple Pay needs a merchant ID (`merchant.com.sheppered.app` is a placeholder). |
+| **Stripe** | A Stripe account with **Connect** enabled (Express accounts, Canada), your platform business details, and your decision on who is the merchant of record. Stripe reviews Connect platforms: allow time. Apple Pay needs a merchant ID (`merchant.com.nouri.app` is a placeholder). |
 | **Apple / Google** | Apple Developer account ($99/yr) with Sign in with Apple enabled; a Google Cloud OAuth client. Both are then pasted into Supabase *Authentication → Providers*. |
 | **Translations** | **All French and Arabic (and Chinese) text is a first draft by me and must be reviewed by native speakers** before launch: `mobile/src/i18n/locales/*` and the French/Arabic/Chinese parts of `supabase/seed.sql`. Pay special attention to Quebec French conventions, and to Arabic medical/pet terminology. |
 

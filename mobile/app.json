@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "Sheppered",
-    "slug": "sheppered",
+    "name": "Nouri",
+    "slug": "nouri",
     "version": "0.1.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "sheppered",
+    "scheme": "nouri",
     "userInterfaceStyle": "light",
     "ios": {
-      "bundleIdentifier": "com.sheppered.app",
+      "bundleIdentifier": "com.nouri.app",
       "supportsTablet": false,
       "usesAppleSignIn": true,
       "infoPlist": {
@@ -16,7 +16,7 @@
       }
     },
     "android": {
-      "package": "com.sheppered.app",
+      "package": "com.nouri.app",
       "adaptiveIcon": {
         "backgroundColor": "#F7F4EE",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
@@ -34,8 +34,8 @@
       [
         "expo-image-picker",
         {
-          "photosPermission": "Sheppered uses your photos so you can add a picture of your pet.",
-          "cameraPermission": "Sheppered uses the camera so you can take a picture of your pet."
+          "photosPermission": "Nouri uses your photos so you can add a picture of your pet.",
+          "cameraPermission": "Nouri uses the camera so you can take a picture of your pet."
         }
       ],
       "expo-secure-store",
@@ -70,7 +70,7 @@
       [
         "@stripe/stripe-react-native",
         {
-          "merchantIdentifier": "merchant.com.sheppered.app",
+          "merchantIdentifier": "merchant.com.nouri.app",
           "enableGooglePay": true
         }
       ],
